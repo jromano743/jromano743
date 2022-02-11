@@ -9,4 +9,4 @@
 - 😄 Nicknames: Juanma, JM
 - ⚡ Fun fact: I like **SO MUCH** the cheese
 
-![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=anuraghazra&show_icons=true&theme=radical)
+![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=jromano743&show_icons=true&theme=radical)
