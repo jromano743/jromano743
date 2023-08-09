@@ -1,29 +1,30 @@
 # 💫 About Me:
-Welcome to My Digital Corner! 👋
+## Welcome to My Digital Corner! 👋
 Hello! I'm Juan Manuel, though you can call me Juanma. I'm a passionate Game Designer and Game Developer with a touch of enthusiasm for Cybersecurity. Here, you'll get a glimpse into my journey in the world of technology, from game development to exploring various backend technologies, automation, and beyond.
 
-About Me 💡
-👨‍💻 Game Designer and Game Developer with experience in Unity (C#) and Unreal Engine (C++).
-🛡️ Cybersecurity Enthusiast, always seeking ways to make systems more secure.
-🌐 Versatile programmer: from working on the backend with Node.js, Python, and SQL to venturing into mobile development with Kotlin.
-🤖 Undertook automation tasks with Python, using tools like Selenium, CSV, and Excel.
-📱 Passionate about mobile technologies and always eager to explore new tools and approaches.
-🐧 Familiar with the Linux environment and skilled in using bash scripts.
-🎮 Sci-fi lover and animated movies fanatic.
-Areas of Expertise 🚀
-Game development in Unity (C#) and Unreal Engine (C++).
-Backend: Node.js, Python, SQL, MongoDB.
-Mobile development using Kotlin.
-Task automation with Python, utilizing tools such as Selenium, CSV, and Excel.
-Continuous exploration of new technologies and tools.
-Computer security and best cybersecurity practices.
-Task automation with bash scripts in Linux environments.
-Contact 📬
+### About Me 💡
+- 👨‍💻 Game Designer and Game Developer with experience in Unity (C#) and Unreal Engine (C++).
+- 🛡️ Cybersecurity Enthusiast, always seeking ways to make systems more secure.
+- 🌐 Versatile programmer: from working on the backend with Node.js, Python, and SQL to venturing into mobile development with Kotlin.
+- 🤖 Undertook automation tasks with Python, using tools like Selenium, CSV, and Excel.
+- 📱 Passionate about mobile technologies and always eager to explore new tools and approaches.
+- 🐧 Familiar with the Linux environment and skilled in using bash scripts.
+- 🎮 Sci-fi lover and animated movies fanatic.
+
+### Areas of Expertise 🚀
+- Game development in Unity (C#) and Unreal Engine (C++).
+- Backend: Node.js, Python, SQL, MongoDB.
+- Mobile development using Kotlin.
+- Task automation with Python, utilizing tools such as Selenium, CSV, and Excel.
+- Continuous exploration of new technologies and tools.
+- Computer security and best cybersecurity practices.
+- Task automation with bash scripts in Linux environments.
+
+### Contact 📬
 I'd love to connect with you! If you have any questions, collaboration proposals, or simply want to chat about sci-fi and animated movies, feel free to get in touch:
 
-📧 Email: juanma@example.com
-📱 Twitter: @JuanmaGameDev
-💼 LinkedIn: linkedin.com/in/juanma-gamedev
+💼 LinkedIn: [linkedin.com/in/juanma-gamedev](https://www.linkedin.com/in/juanma-rs/)
+
 Thanks for visiting my profile, and I hope you enjoy exploring my work and interests! See you soon! 👾
 
 
@@ -39,9 +40,6 @@ Thanks for visiting my profile, and I hope you enjoy exploring my work and inter
 
 ## 🏆 GitHub Trophies
 ![](https://github-profile-trophy.vercel.app/?username=jromano743&theme=monokai&no-frame=false&no-bg=false&margin-w=4)
-
-### 😂 Random Dev Meme
-<img src="https://rm.up.railway.app/" width="512px"/>
 
 ---
 [![](https://visitcount.itsvg.in/api?id=jromano743&icon=0&color=0)](https://visitcount.itsvg.in)
