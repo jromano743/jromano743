@@ -23,7 +23,7 @@ Hello! I'm Juan Manuel, though you can call me Juanma. I'm a passionate Game Des
 ### Contact 📬
 I'd love to connect with you! If you have any questions, collaboration proposals, or simply want to chat about sci-fi and animated movies, feel free to get in touch:
 
-💼 LinkedIn: [linkedin.com/in/juanma-gamedev](https://www.linkedin.com/in/juanma-rs/)
+💼 LinkedIn: [linkedin.com/in/juanma-rs/](https://www.linkedin.com/in/juanma-rs/)
 
 Thanks for visiting my profile, and I hope you enjoy exploring my work and interests! See you soon! 👾
 
