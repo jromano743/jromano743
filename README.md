@@ -7,7 +7,6 @@ Hello! I'm Juan Manuel, though you can call me Juanma. I'm a passionate Game Des
 - 💻 Backend Developer with .NET, Node.js and Python
 - 🤖 AI Enthusiast, always seeking ways to make systems more secure.
 - 🌐 Versatile programmer: from working on the backend with Node.js, Python, and SQL to venturing into mobile development with Kotlin.
-- 📱 Passionate about mobile technologies and always eager to explore new tools and approaches.
 - 🐧 Familiar with the Linux environment and skilled in using bash scripts.
 - 🎮 Sci-fi lover and animated movies fanatic.
 
