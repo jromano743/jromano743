@@ -4,15 +4,16 @@ Hello! I'm Juan Manuel, though you can call me Juanma. I'm a passionate Game Des
 
 ### About Me 💡
 - 👨‍💻 Game Designer and Game Developer with experience in Unity (C#) and Unreal Engine (C++).
-- 💻 Backend Developer with .NET, Node.js and Python
+- 💻 Backend Developer with .NET, Node.js and Python (SQL, MongoDB)
+- 🔑 Cybersecurity Enthusiast, building skills in penetration testing and secure coding practices.
 - 🤖 AI Enthusiast, always seeking ways to make systems more secure.
-- 🌐 Versatile programmer: from working on the backend with Node.js, Python, and SQL to venturing into mobile development with Kotlin.
+- 🌐 Versatile programmer: from working on the backend with Node.js, Python, and SQL.
 - 🐧 Familiar with the Linux environment and skilled in using bash scripts.
 - 🎮 Sci-fi lover and animated movies fanatic.
 
 ### Areas of Expertise 🚀
-- Game development in Unity (C#) and Unreal Engine (C++).
-- Backend: ASP.NET Core, Node.js, Python, SQL, MongoDB.
+- Game development in Unity (C#), Unreal Engine (C++) and Renpy (Python).
+- Backend Technologies: ASP.NET Core, Node.js, Python, SQL, MongoDB.
 - Task automation with Python, utilizing tools such as Selenium, CSV, and Excel.
 - Continuous exploration of new technologies and tools.
 - Task automation with bash scripts in Linux environments.
