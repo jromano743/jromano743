@@ -34,9 +34,13 @@ Here are some of the tools and languages I work with:
 | ![C#](https://img.shields.io/badge/c%23-%23239120.svg?style=flat&logo=c-sharp&logoColor=white) ![Python](https://img.shields.io/badge/python-3670A0?style=flat&logo=python&logoColor=ffdd54) ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=flat&logo=javascript&logoColor=%23F7DF1E) | ![Unity](https://img.shields.io/badge/Unity-%2320232a.svg?style=flat&logo=unity&logoColor=white) ![Unreal](https://img.shields.io/badge/Unreal-%2320232a.svg?style=flat&logo=unreal-engine&logoColor=white) ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=flat&logo=node.js&logoColor=white) | ![MySQL](https://img.shields.io/badge/mysql-%2300f.svg?style=flat&logo=mysql&logoColor=white) ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=flat&logo=mongodb&logoColor=white) ![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=flat&logo=docker&logoColor=white) |
 
 ### 📊 Stats & Achievements
-- ![GitHub Stats](https://github-readme-stats.vercel.app/api?username=jromano743&theme=gruvbox&hide_border=true&include_all_commits=true&count_private=true)
-- ![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=jromano743&theme=gruvbox&hide_border=true)
-- ![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=jromano743&theme=gruvbox&hide_border=true&include_all_commits=true&count_private=true&layout=compact)
+<div align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=jromano743&theme=gruvbox&hide_border=true&include_all_commits=true&count_private=true">
+  <br>
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=jromano743&theme=gruvbox&hide_border=true">
+  <br>
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=jromano743&theme=gruvbox&hide_border=true&include_all_commits=true&count_private=true&layout=compact">
+</div>
 
 ## 🏆 GitHub Trophies
 <div align="center">
