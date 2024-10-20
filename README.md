@@ -55,7 +55,7 @@ Here are some of the tools and languages I work with:
 | Platform  | Link  |
 |-----------|-------|
 | 💼 **LinkedIn** | [Connect with me](https://www.linkedin.com/in/juanma-rs/) |
-| ✉️ **Email** | [Contact me](mailto:juanma@example.com) |
+| ✉️ **My website** | [Contact me](https://bento.me/jotaeme) |
 
 > _Let’s collaborate, chat about technology, or discuss the latest animated movie releases!_
 > 
