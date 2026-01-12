@@ -2,7 +2,7 @@ title: Lobby Lab
 description: Un sitio personal con estética del 2001
 
 url: "https://jromano743.github.io"
-baseurl: ""
+baseurl: "/jromano743"
 
 markdown: kramdown
 
