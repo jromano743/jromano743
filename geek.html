@@ -1,0 +1,24 @@
+---
+layout: default
+title: Gamer
+---
+<!-- HOME -->
+<section class="home-intro">
+  <h2>Geek</h2>
+  <p>
+    Sección de <strong>{{ site.title }}</strong> donde se habla de videojuegos, series, películas y también de tecnología, pero desde la mirada de un usuario o un aficionado.
+  </p>
+</section>
+
+<!-- POSTS -->
+<section class="post-list">
+  <h3>Posts</h3>
+  <ul>
+    {% for post in site.categories.geek %}
+      <li>
+        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        <small>{{ post.date | date: "%Y-%m-%d" }}</small>
+      </li>
+    {% endfor %}
+  </ul>
+</section>

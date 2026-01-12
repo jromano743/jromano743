@@ -1,0 +1,114 @@
+---
+layout: default
+---
+
+<article class="post">
+
+  <header class="post-header">
+    <h2>
+      <span class="post-category">
+        {{ page.categories | first | capitalize }}
+      </span>
+      >> {{ page.title }}
+    </h2>
+    <small class="post-date">
+      {{ page.date | date: "%Y-%m-%d" }}
+    </small>
+  </header>
+
+  <section class="post-content">
+    {{ content }}
+  </section>
+
+  {% assign category = page.categories[0] %}
+  {% assign slug = page.slug | default: page.url | split: '/' | last %}
+  {% assign comments = site.data.comments[category][slug] %}
+
+  <!-- =========================
+       COMENTARIOS PUBLICADOS
+  ========================== -->
+  <section class="comments">
+    <h3>Comentarios</h3>
+
+    {% if comments %}
+      {% for c in comments %}
+        <div class="comment">
+          <div class="comment-header">
+            <span class="comment-user">{{ c.user }}</span>
+            |
+            <span class="comment-date">{{ c.date }}</span>
+          </div>
+
+          <div class="comment-body">
+            {{ c.text }}
+          </div>
+        </div>
+      {% endfor %}
+    {% else %}
+      <p class="no-comments">Todavía no hay comentarios.</p>
+    {% endif %}
+  </section>
+
+  <!-- =========================
+     FORMULARIO DE COMENTARIOS
+========================== -->
+<section class="comment-form">
+  <h3 class="comment-form__title">Dejar un comentario</h3>
+
+  <form
+    class="comment-form__form"
+    action="https://formsubmit.co/comentarios.jmb@gmail.com"
+    method="POST"
+  >
+
+    <!-- Configuración FormSubmit -->
+    <input type="hidden" name="_subject" value="Nuevo comentario en {{ page.title }}">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_next" value="{{ site.url }}{{ page.url }}#comentarios">
+
+    <!-- Contexto del post -->
+    <input type="hidden" name="post" value="{{ page.title }}">
+    <input type="hidden" name="url" value="{{ site.url }}{{ page.url }}">
+
+    <label class="comment-form__field">
+      <span class="comment-form__label">Nombre o Nickname</span>
+      <input
+        class="comment-form__input"
+        type="text"
+        name="user"
+        required
+      >
+    </label>
+
+    <label class="comment-form__field">
+      <span class="comment-form__label">Email (opcional)</span>
+      <input
+        class="comment-form__input"
+        type="email"
+        name="email"
+      >
+    </label>
+
+    <label class="comment-form__field">
+      <span class="comment-form__label">Comentario</span>
+      <textarea
+        class="comment-form__textarea"
+        name="text"
+        rows="4"
+        required
+      ></textarea>
+    </label>
+
+    <button class="comment-form__submit" type="submit">
+      Enviar comentario
+    </button>
+  </form>
+
+  <small class="comment-form__note">
+    Los comentarios no se publican automáticamente.<br>
+    Se revisan antes de aparecer en el sitio.
+  </small>
+</section>
+
+</article>

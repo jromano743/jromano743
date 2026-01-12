@@ -1,0 +1,21 @@
+title: Lobby Lab
+description: Un sitio personal con estética del 2001
+
+url: "https://jromano743.github.io"
+baseurl: ""
+
+markdown: kramdown
+
+theme: minima
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+permalink: pretty
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor

@@ -1,0 +1,26 @@
+---
+layout: default
+title: Inicio
+---
+
+<!-- HOME -->
+<section class="home-intro">
+  <h2>Inicio</h2>
+  <p>
+    Bienvenido a <strong>{{ site.title }}</strong> (nombre en progreso)<br>
+    <b>*Inserte un slogan creativo*</b>
+  </p>
+</section>
+
+<!-- POSTS -->
+<section class="post-list">
+  <h3>Posts</h3>
+  <ul>
+    {% for post in site.categories.inicio %}
+      <li>
+        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        <small>{{ post.date | date: "%Y-%m-%d" }}</small>
+      </li>
+    {% endfor %}
+  </ul>
+</section>
