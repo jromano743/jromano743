@@ -19,7 +19,7 @@ categories: [techie]
 
 <p>
   Me quedaré con ese nombre y lo usaré. Espero en un futuro poder dedicarle más tiempo. De momento, te comparto el link al blog:<br>
-  <a href="https://elsempp.blogspot.com/" target="_blank>Ver blog</a>
+  <a href="https://elsempp.blogspot.com/" target="_blank">Ver blog</a>
 </p>
 
 <p>
