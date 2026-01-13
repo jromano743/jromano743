@@ -455,3 +455,147 @@ body::after {
   color: #66ffcc;
   opacity: .7;
 }
+
+/* =========================
+   RESPONSIVE — MOBILE
+========================= */
+
+/* ---------- Tablets y mobile ---------- */
+@media (max-width: 768px) {
+
+  /* layout: usar todo el ancho */
+  .page {
+    grid-template-columns:
+      minmax(0, 1fr);
+  }
+
+  .page > * {
+    grid-column: 1;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  /* header */
+  header h1 {
+    font-size: 1.6rem;
+    text-align: center;
+  }
+
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .6rem;
+    justify-content: center;
+  }
+
+  nav a {
+    margin-right: 0;
+    font-size: .85rem;
+  }
+
+  /* títulos con typing → sin overflow raro */
+  h2 {
+    white-space: normal;
+    animation: none;
+  }
+
+  h2::after {
+    display: none;
+  }
+
+  /* posts */
+  article h1 {
+    font-size: 1.6rem;
+  }
+
+  main {
+    padding: 1.5rem 0;
+  }
+
+  article {
+    margin-bottom: 3rem;
+  }
+
+  /* imágenes */
+  .img-frame {
+    margin: 2rem auto;
+  }
+
+  .img-frame img {
+    max-width: 100%;
+  }
+
+  /* galería */
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+
+  /* comentarios */
+  .comment {
+    padding: .8rem 1rem;
+  }
+
+  .comment:hover {
+    transform: none;
+  }
+
+  /* formulario */
+  .comment-form {
+    padding: 1.5rem 1rem;
+  }
+
+  .comment-form__submit {
+    align-self: stretch;
+    text-align: center;
+  }
+}
+
+/* ---------- Mobile chico ---------- */
+@media (max-width: 480px) {
+
+  body {
+    font-size: .9rem;
+  }
+
+  header h1 {
+    font-size: 1.4rem;
+  }
+
+  nav a {
+    font-size: .8rem;
+  }
+
+  article h1 {
+    font-size: 1.4rem;
+  }
+
+  /* reducir efectos pesados */
+  body::after {
+    opacity: .06;
+  }
+
+  /* code blocks */
+  pre {
+    font-size: .75rem;
+    padding: .8rem;
+  }
+
+  /* comentarios */
+  .comments h3 {
+    font-size: 1.1rem;
+  }
+
+  .comment::before {
+    display: none;
+  }
+
+  /* formulario */
+  .comment-form__label {
+    font-size: .7rem;
+  }
+
+  .comment-form__input,
+  .comment-form__textarea {
+    font-size: .8rem;
+  }
+}
