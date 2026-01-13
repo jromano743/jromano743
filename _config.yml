@@ -4,6 +4,8 @@ description: Un sitio personal con estética del 2001
 url: "https://jromano743.github.io"
 baseurl: "/jromano743"
 
+destination: _docs
+
 markdown: kramdown
 
 theme: minima
@@ -17,5 +19,8 @@ permalink: pretty
 exclude:
   - Gemfile
   - Gemfile.lock
-  - node_modules
+  - post-templates
   - vendor
+  - README.md
+  - docker-compose.yml
+  - .gitignore
