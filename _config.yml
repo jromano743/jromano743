@@ -22,3 +22,4 @@ exclude:
   - README.md
   - docker-compose.yml
   - .gitignore
+  - update.sh
