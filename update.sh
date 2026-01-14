@@ -3,7 +3,7 @@
 # ------------------------------
 # Configuración
 # ------------------------------
-SITE_DIR="_site"          # Carpeta compilada local
+SITE_DIR="_site"           # Carpeta compilada local
 GH_PAGES_BRANCH="gh-pages" # Rama que servirá en GitHub Pages
 
 # ------------------------------
@@ -37,9 +37,9 @@ fi
 git rm -rf . > /dev/null 2>&1
 
 # ------------------------------
-# Copiar contenido compilado
+# Copiar contenido compilado a la raíz
 # ------------------------------
-cp -r ../$SITE_DIR/* .
+cp -r "$SITE_DIR"/. .
 
 # ------------------------------
 # Commit de actualización
@@ -50,7 +50,7 @@ git commit -m "Actualizar sitio compilado $(date +"%Y-%m-%d %H:%M:%S")"
 # ------------------------------
 # Volver a la rama original
 # ------------------------------
-git checkout $CURRENT_BRANCH
+# git checkout $CURRENT_BRANCH
 
 echo "✅ gh-pages actualizado. Para subirlo, ejecuta:"
 echo "   git push origin $GH_PAGES_BRANCH"
