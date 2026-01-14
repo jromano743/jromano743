@@ -563,12 +563,31 @@ body::after {
 
 
 
+
 /* =========================
    RESPONSIVE — MOBILE
 ========================= */
 
 /* ---------- Tablets y mobile ---------- */
 @media (max-width: 768px) {
+
+  .main-layout {
+    flex-direction: column;
+  }
+
+  .left-column, .right-column {
+    flex: none;
+    width: 100%;
+  }
+
+  .right-column {
+    margin-top: 2rem;
+    align-items: center;
+  }
+
+  .img-frame img {
+    max-width: 80%;
+  }
 
   /* layout: usar todo el ancho */
   .page {
