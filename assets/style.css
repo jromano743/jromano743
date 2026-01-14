@@ -457,11 +457,137 @@ body::after {
 }
 
 /* =========================
+   CARD
+========================= */
+.card {
+  background: linear-gradient(145deg, #010a06, #00110a);
+  border: 1px solid #00ff88;
+  padding: 1.5rem 1.8rem;
+  margin-bottom: 2rem;
+  border-radius: 8px;
+  box-shadow:
+    0 0 15px rgba(0,255,136,.3),
+    inset 0 0 20px rgba(0,255,136,.1);
+  transition: transform .2s, box-shadow .3s;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 0 25px rgba(0,255,136,.6),
+    inset 0 0 25px rgba(0,255,136,.15);
+}
+
+.card h3 {
+  margin-top: 0;
+  margin-bottom: 0.8rem;
+  color: #00ff88;
+  font-size: 1.5rem;
+  text-shadow: 0 0 6px rgba(0,255,136,.7);
+}
+
+.card p {
+  margin: 0 0 1rem 0;
+  color: #c8ffcc;
+  line-height: 1.5;
+}
+
+.card .links {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.card .links a {
+  color: #66ffcc;
+  text-decoration: none;
+  font-weight: bold;
+  border: 1px solid #00ff88;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  transition: background .2s, box-shadow .2s;
+}
+
+.card .links a:hover {
+  background: rgba(0,255,136,.1);
+  box-shadow: 0 0 10px rgba(0,255,136,.5);
+}
+
+/* -----------------------
+   CARDS ABOUT
+------------------------ */
+.about-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.about-cards .card {
+  background: linear-gradient(135deg, #010a06, #001100);
+  border: 1px solid #00ff88;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0,255,136,.2);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.about-cards .card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 25px rgba(0,255,136,.5);
+}
+
+.about-cards .card h4 {
+  margin: 0 0 0.5rem;
+  font-size: 1.1rem;
+  color: #00ff88;
+}
+
+.about-cards .card p {
+  font-size: 0.85rem;
+  margin: 0 0 0.7rem;
+  color: #c8ffcc;
+}
+
+.about-cards .card .links a {
+  font-size: 0.8rem;
+  color: #66ffcc;
+  margin: 0 0.3rem;
+  text-decoration: none;
+}
+
+.about-cards .card .links a:hover {
+  text-shadow: 0 0 6px rgba(0,255,204,.8);
+}
+
+
+
+
+/* =========================
    RESPONSIVE — MOBILE
 ========================= */
 
 /* ---------- Tablets y mobile ---------- */
 @media (max-width: 768px) {
+
+  .main-layout {
+    flex-direction: column;
+  }
+
+  .left-column, .right-column {
+    flex: none;
+    width: 100%;
+  }
+
+  .right-column {
+    margin-top: 2rem;
+    align-items: center;
+  }
+
+  .img-frame img {
+    max-width: 80%;
+  }
 
   /* layout: usar todo el ancho */
   .page {
