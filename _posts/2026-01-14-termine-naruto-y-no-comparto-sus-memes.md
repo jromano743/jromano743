@@ -231,7 +231,6 @@ Intencionalmente estos dos personajes están planteados como personajes __sin mo
     <img
       src="{{ '/assets/images/terminenaruto/15_kaguya.webp' | relative_url }}"
       alt="La frustración en forma de nivel">
-    <span>FIG 01 · La frustración en forma de nivel</span>
   </div>
 
   <div class="img-frame">
