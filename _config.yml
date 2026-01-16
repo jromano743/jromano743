@@ -8,6 +8,8 @@ markdown: kramdown
 
 theme: minima
 
+default_image: /assets/images/default_cover.webp
+
 plugins:
   - jekyll-feed
   - jekyll-seo-tag

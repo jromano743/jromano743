@@ -5,7 +5,17 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ site.title }}</title>
+
+  <title>
+    {% if page.title %}
+      {{ site.title }} · {{ page.title }}
+    {% else %}
+      {{ site.title }}
+    {% endif %}
+  </title>
+
+  {% include meta.html %}
+
   <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
 </head>
 
