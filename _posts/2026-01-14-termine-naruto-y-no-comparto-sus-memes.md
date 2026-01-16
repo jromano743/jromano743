@@ -48,14 +48,12 @@ Sí, es verdad, pero el destino determinado para Naruto no tenía nada que ver c
     <img
       src="{{ '/assets/images/terminenaruto/01_valle_del_fin.webp' | relative_url }}"
       alt="La frustración en forma de nivel">
-    <span>FIG 01 · La frustración en forma de nivel</span>
   </div>
 
   <div class="img-frame">
     <img
       src="{{ '/assets/images/terminenaruto/02_valle_del_fin.webp' | relative_url }}"
       alt="Una hermosa gema">
-    <span>FIG 02 · Una hermosa gema</span>
   </div>
 
 </div>
@@ -74,14 +72,12 @@ Con Sakura y Sasuke ocurre lo mismo. La única diferencia es que Sakura tiene un
     <img
       src="{{ '/assets/images/terminenaruto/03_sasuke_sakura.webp' | relative_url }}"
       alt="La frustración en forma de nivel">
-    <span>FIG 01 · La frustración en forma de nivel</span>
   </div>
 
   <div class="img-frame">
     <img
       src="{{ '/assets/images/terminenaruto/04_naruto_hinata.webp' | relative_url }}"
       alt="Una hermosa gema">
-    <span>FIG 02 · Una hermosa gema</span>
   </div>
 
 </div>
@@ -100,14 +96,12 @@ Sakura cumple el mismo rol de Rin: ser el puente o la conexión entre sus compa�
     <img
       src="{{ '/assets/images/terminenaruto/06_sakura.webp' | relative_url }}"
       alt="Una hermosa gema">
-    <span>FIG 02 · Una hermosa gema</span>
   </div>
 
   <div class="img-frame">
     <img
       src="{{ '/assets/images/terminenaruto/07_rin.webp' | relative_url }}"
       alt="La frustración en forma de nivel">
-    <span>FIG 01 · La frustración en forma de nivel</span>
   </div>
 
 </div>
@@ -134,7 +128,6 @@ Su decisión de ser Hokage no es absurda. Incluso lo dice: será otro tipo de Ho
     <img
         src="{{ '/assets/images/terminenaruto/09_sasuke.webp' | relative_url }}"
         alt="La frustración en forma de nivel">
-    <span>FIG 01 · La frustración en forma de nivel</span>
 </div>
 
 
@@ -167,7 +160,6 @@ Esta diferencia se resuelve en la peléa final. No es casualidad que ambos pierd
     <img
         src="{{ '/assets/images/terminenaruto/12_hermanos.webp' | relative_url }}"
         alt="Una hermosa gema">
-    <span>FIG 02 · Una hermosa gema</span>
 </div>
 
 <div class="img-frame">
