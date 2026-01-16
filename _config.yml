@@ -26,3 +26,4 @@ exclude:
   - .gitignore
   - update.sh
   - optimize-images.sh
+  - TODO.md

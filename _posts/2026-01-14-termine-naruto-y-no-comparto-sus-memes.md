@@ -238,7 +238,6 @@ Intencionalmente estos dos personajes están planteados como personajes __sin mo
     <img
       src="{{ '/assets/images/terminenaruto/14_zetsu.webp' | relative_url }}"
       alt="Una hermosa gema">
-    <span>FIG 02 · Una hermosa gema</span>
   </div>
 
 </div>
@@ -253,7 +252,6 @@ Esta es la única pelea que Naruto lucha por decisión propia. No podía perder,
     <img
         src="{{ '/assets/images/terminenaruto/16_valle_del_fin.webp' | relative_url }}"
         alt="La frustración en forma de nivel">
-    <span>FIG 01 · La frustración en forma de nivel</span>
 </div>
 
 ---
