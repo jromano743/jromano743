@@ -39,14 +39,14 @@ Fue fácil para mí, ya más adulto, completar los tres juegos, por supuesto com
 
   <div class="img-frame">
     <img
-      src="{{ '/assets/images/crashbandicoot/fail_01.jpg' | relative_url }}"
+      src="{{ '/assets/images/crashbandicoot/fail_01.webp' | relative_url }}"
       alt="La frustración en forma de nivel">
     <span>FIG 01 · La frustración en forma de nivel</span>
   </div>
 
   <div class="img-frame">
     <img
-      src="{{ '/assets/images/crashbandicoot/fail_02.jpg' | relative_url }}"
+      src="{{ '/assets/images/crashbandicoot/fail_02.webp' | relative_url }}"
       alt="Una hermosa gema">
     <span>FIG 02 · Una hermosa gema</span>
   </div>
@@ -95,7 +95,7 @@ Como sea, aquí dejo evidencia empírica de mi proeza.
 
 <div class="img-frame">
   <img
-    src="{{ '/assets/images/crashbandicoot/reliquia.jpg' | relative_url }}"
+    src="{{ '/assets/images/crashbandicoot/reliquia.webp' | relative_url }}"
     alt="Reliquia de oro de Stormy Ascent">
   <span>FIG 03 · Reliquia de oro de Stormy Ascent</span>
 </div>
