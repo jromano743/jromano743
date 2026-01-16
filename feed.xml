@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://0.0.0.0:4000/jromano743/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/jromano743/" rel="alternate" type="text/html" /><updated>2026-01-16T00:34:16-06:00</updated><id>http://0.0.0.0:4000/jromano743/feed.xml</id><title type="html">Lobby Lab</title><subtitle>Un sitio personal con estética del 2001</subtitle><entry><title type="html">Terminé Naruto y no comparto sus memes</title><link href="http://0.0.0.0:4000/jromano743/geek/2026/01/14/termine-naruto-y-no-comparto-sus-memes/" rel="alternate" type="text/html" title="Terminé Naruto y no comparto sus memes" /><published>2026-01-14T00:00:00-06:00</published><updated>2026-01-14T00:00:00-06:00</updated><id>http://0.0.0.0:4000/jromano743/geek/2026/01/14/termine-naruto-y-no-comparto-sus-memes</id><content type="html" xml:base="http://0.0.0.0:4000/jromano743/geek/2026/01/14/termine-naruto-y-no-comparto-sus-memes/"><![CDATA[<p>Hace poco finalmente terminé el animé de Naruto y debo decir que, como dicen, es una obra maestra. Obviamente vi el anime salteándome el relleno, gracias a 
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://0.0.0.0:4000/jromano743/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/jromano743/" rel="alternate" type="text/html" /><updated>2026-01-16T01:13:10-06:00</updated><id>http://0.0.0.0:4000/jromano743/feed.xml</id><title type="html">Lobby Lab</title><subtitle>Un sitio personal con estética del 2001</subtitle><entry><title type="html">Terminé Naruto y no comparto sus memes</title><link href="http://0.0.0.0:4000/jromano743/geek/2026/01/14/termine-naruto-y-no-comparto-sus-memes/" rel="alternate" type="text/html" title="Terminé Naruto y no comparto sus memes" /><published>2026-01-14T00:00:00-06:00</published><updated>2026-01-14T00:00:00-06:00</updated><id>http://0.0.0.0:4000/jromano743/geek/2026/01/14/termine-naruto-y-no-comparto-sus-memes</id><content type="html" xml:base="http://0.0.0.0:4000/jromano743/geek/2026/01/14/termine-naruto-y-no-comparto-sus-memes/"><![CDATA[<p>Hace poco finalmente terminé el animé de Naruto y debo decir que, como dicen, es una obra maestra. Obviamente vi el anime salteándome el relleno, gracias a 
 <a href="https://animanga.es/ver-naruto-sin-relleno-ar-3508/" target="_blank" rel="noopener noreferrer">
   esta lista
 </a>
@@ -283,7 +283,6 @@
 
   <div class="img-frame">
     <img src="/jromano743/assets/images/terminenaruto/14_zetsu.webp" alt="Una hermosa gema" />
-    <span>FIG 02 · Una hermosa gema</span>
   </div>
 
 </div>
@@ -296,7 +295,6 @@
 
 <div class="img-frame">
     <img src="/jromano743/assets/images/terminenaruto/16_valle_del_fin.webp" alt="La frustración en forma de nivel" />
-    <span>FIG 01 · La frustración en forma de nivel</span>
 </div>
 
 <hr />
@@ -842,7 +840,7 @@ Pero este es distinto, es personalizado, desde 0 e informal. Con un archivo que 
 
 <p>No doy más vueltas. Aquí puedes ver el índice de las apps</p>
 <blockquote>
-  <p><a href="https://jromano743.github.io/repo-pwa/">Ver web</a></p>
+  <p><a href="https://jromano743.github.io/repo-pwa/" target="_blank">Ver web</a></p>
 </blockquote>
 
 <h4>Instalación</h4>
