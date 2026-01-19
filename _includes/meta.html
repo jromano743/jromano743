@@ -6,7 +6,7 @@
       content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
 
 <meta property="og:url"
-      content="{{ site.url }}{{ page.url }}">
+      content="https://jromano743.github.io/jromano743{{ page.url }}">
 
 <meta property="og:description"
       content="{% if page.excerpt %}
@@ -16,7 +16,7 @@
               {% endif %}">
 
 <meta property="og:image"
-      content="{{ page.image | default: site.default_image | absolute_url }}">
+      content="https://jromano743.github.io/jromano743{{ page.image | default: site.default_image }}">
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
@@ -32,4 +32,4 @@
               {% endif %}">
 
 <meta name="twitter:image"
-      content="{{ site.url }}{{ page.image | default: site.default_image }}">
+      content="https://jromano743.github.io/jromano743{{ page.image | default: site.default_image }}">

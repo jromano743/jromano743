@@ -39,7 +39,7 @@ Here are some of the tools and languages I work with:
 | Platform  | Link  |
 |-----------|-------|
 | 💼 **LinkedIn** | <a href="https://www.linkedin.com/in/juanma-rs/" target="_blank">Connect with me</a> |
-| ✉️ **My website** | <a href="https://jromano743.github.io/jromano743/" target="_blank">Contact me</a> |
+| ✉️ **My website** | <a href="https://jromano743.github.io/jromano743/" target="_blank">Meet me</a> |
 
 > _Let’s collaborate, chat about technology, or discuss the latest animated movie releases!_
 > 
