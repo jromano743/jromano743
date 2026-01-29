@@ -1,4 +1,49 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://0.0.0.0:4000/jromano743/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/jromano743/" rel="alternate" type="text/html" /><updated>2026-01-29T13:17:18-06:00</updated><id>http://0.0.0.0:4000/jromano743/feed.xml</id><title type="html">Lobby Lab</title><subtitle>Un sitio personal con estética del 2001</subtitle><entry><title type="html">Vean To be Hero X</title><link href="http://0.0.0.0:4000/jromano743/geek/2026/01/23/vean-to-be-hero-x/" rel="alternate" type="text/html" title="Vean To be Hero X" /><published>2026-01-23T00:00:00-06:00</published><updated>2026-01-23T00:00:00-06:00</updated><id>http://0.0.0.0:4000/jromano743/geek/2026/01/23/vean-to-be-hero-x</id><content type="html" xml:base="http://0.0.0.0:4000/jromano743/geek/2026/01/23/vean-to-be-hero-x/"><![CDATA[<p>Hace tiempo que quiero hablar de este anime, pero me cuesta encontrar las palabras. Así que “vamos a fluir”.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://0.0.0.0:4000/jromano743/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/jromano743/" rel="alternate" type="text/html" /><updated>2026-01-29T14:08:15-06:00</updated><id>http://0.0.0.0:4000/jromano743/feed.xml</id><title type="html">Lobby Lab</title><subtitle>Un sitio personal con estética del 2001</subtitle><entry><title type="html">Cipher: Mi nuevo bot de Telegram para jugar con criptografía</title><link href="http://0.0.0.0:4000/jromano743/techie/2026/01/25/bot-cipher/" rel="alternate" type="text/html" title="Cipher: Mi nuevo bot de Telegram para jugar con criptografía" /><published>2026-01-25T00:00:00-06:00</published><updated>2026-01-25T00:00:00-06:00</updated><id>http://0.0.0.0:4000/jromano743/techie/2026/01/25/bot-cipher</id><content type="html" xml:base="http://0.0.0.0:4000/jromano743/techie/2026/01/25/bot-cipher/"><![CDATA[<p>Últimamente he estado metido en un “agujero de conejo” con el tema de la privacidad y el manejo de datos. Así que, fiel a mi estilo de “aprender haciendo”, me puse a programar <strong>Cipher</strong>, un bot de Telegram que funciona como una navaja suiza de bolsillo para cifrar mensajes y manipular texto.</p>
+
+<p>Aún está en etapa de <strong>prototipo</strong> (está en el horno, como quien dice), pero ya tiene una estructura sólida que me tiene bastante emocionado.</p>
+
+<h3 id="por-qué-existe-cipher">¿Por qué existe Cipher?</h3>
+<p>La idea es simple: tener una herramienta a mano que te permita cifrar o procesar información sin salir de la app de mensajería. No es que estemos ocultando secretos de estado, pero hay algo muy satisfactorio en mandar un mensaje que solo alguien con la “llave” pueda leer, o simplemente generar un código QR rápido sin entrar a páginas llenas de publicidad.</p>
+
+<div class="img-frame">
+    <img src="/jromano743/assets/images/cipherbot/commands.webp" alt="Cipher Bot Commands" />
+</div>
+
+<h3 id="el-cerebro-detrás-de-cipher">El “cerebro” detrás de Cipher</h3>
+<p>Para los más curiosos, estoy armando el bot con <code class="language-plaintext highlighter-rouge">python-telegram-bot</code>. La arquitectura está separada por controladores (<code class="language-plaintext highlighter-rouge">Controllers</code>), lo que me permite escalar las funciones de forma organizada. Aquí les cuento un poco qué puede hacer hasta ahora:</p>
+
+<ul>
+  <li><strong>Cifrado Clásico (<code class="language-plaintext highlighter-rouge">/cipher</code>):</strong> La función principal. Permite elegir entre diferentes algoritmos para encriptar y desencriptar texto.</li>
+  <li><strong>Hashing de archivos (<code class="language-plaintext highlighter-rouge">/hash</code> y <code class="language-plaintext highlighter-rouge">/hashall</code>):</strong> Si alguna vez necesitas verificar la integridad de un archivo, el bot te genera el hash (MD5, SHA256, etc.) en un segundo.</li>
+  <li><strong>Generador de seguridad:</strong> Tiene comandos para crear <strong>UUIDs</strong> y <strong>contraseñas seguras</strong> de forma aleatoria (<code class="language-plaintext highlighter-rouge">/uuid</code>, <code class="language-plaintext highlighter-rouge">/password</code>).</li>
+  <li><strong>Utilidades de texto:</strong> Cosas divertidas como invertir el texto (<code class="language-plaintext highlighter-rouge">/reverse</code>) o limpiar caracteres especiales.</li>
+  <li><strong>QR Generator:</strong> Le pasas un texto o link y te devuelve el código QR listo para usar.</li>
+</ul>
+
+<div class="img-frame">
+    <img src="/jromano743/assets/images/cipherbot/command_help.webp" alt="Cipher Bot Help command" />
+</div>
+
+<h3 id="un-vistazo-a-las-vistas">Un vistazo a las vistas</h3>
+<p>Lo que más me gusta de cómo está quedando es el menú interactivo. Uso <code class="language-plaintext highlighter-rouge">CallbackQueryHandler</code> para que no tengas que escribir comandos complejos; el bot te va guiando con botones para elegir el algoritmo o la acción que querés realizar.</p>
+
+<div class="img-frame">
+    <img src="/jromano743/assets/images/cipherbot/encrypt.webp" alt="Cipher Bot Encrypt" />
+</div>
+
+<p>Incluso le puse un “Job Queue” que limpia el estado de los usuarios cada minuto para que no se quede nada trabado en memoria. Es un detalle técnico, pero hace que la experiencia sea mucho más fluida y eficiente.</p>
+
+<h3 id="estado-actual-prototipo">Estado actual: Prototipo</h3>
+<p>Como les dije, todavía no lo he publicado oficialmente. Estoy puliendo el <code class="language-plaintext highlighter-rouge">unified_handler</code>, que es el que se encarga de decidir si lo que mandaste es un texto para cifrar o un documento para analizar.</p>
+
+<p>Todavía hay algunos comandos comentados en el código (como el de inspeccionar metadatos de archivos), porque quiero estar seguro de que funcionen perfecto antes de liberarlos al público.</p>
+
+<h3 id="conclusión-lo-que-se-viene">Conclusión: Lo que se viene</h3>
+<p>Me parece genial cómo un simple bot de Telegram puede terminar siendo una herramienta de aprendizaje tan potente sobre criptografía y manejo de servidores. Por ahora, <strong>Cipher</strong> sigue en mi entorno de desarrollo, pero pronto espero poder compartirles el link para que lo prueben y me digan qué les parece.</p>
+
+<p>Me encanta cuando este tipo de proyectos “pequeños” terminan enseñándote más que un curso entero. ¡Estén atentos para cuando salga la versión definitiva!</p>
+
+<p>¡Nos vemos!</p>]]></content><author><name></name></author><category term="techie" /><summary type="html"><![CDATA[Últimamente he estado metido en un “agujero de conejo” con el tema de la privacidad y el manejo de datos. Así que, fiel a mi estilo de “aprender haciendo”, me puse a programar Cipher, un bot de Telegram que funciona como una navaja suiza de bolsillo para cifrar mensajes y manipular texto.]]></summary></entry><entry><title type="html">Vean To be Hero X</title><link href="http://0.0.0.0:4000/jromano743/geek/2026/01/23/vean-to-be-hero-x/" rel="alternate" type="text/html" title="Vean To be Hero X" /><published>2026-01-23T00:00:00-06:00</published><updated>2026-01-23T00:00:00-06:00</updated><id>http://0.0.0.0:4000/jromano743/geek/2026/01/23/vean-to-be-hero-x</id><content type="html" xml:base="http://0.0.0.0:4000/jromano743/geek/2026/01/23/vean-to-be-hero-x/"><![CDATA[<p>Hace tiempo que quiero hablar de este anime, pero me cuesta encontrar las palabras. Así que “vamos a fluir”.</p>
 
 <p><em>To be Hero X</em> es un anime japonés y chino, por lo que se escapa un poco de las fórmulas generales, al menos en lo que a narrativa audiovisual se refiere. El punto más drástico e interesante a primera vista es la sinergia para contar una historia con una estética 2D y 3D sin romper la narrativa. Esto es lo primero que me llamó la atención al ver el opening.</p>
 
@@ -912,17 +957,7 @@ Tengo fe en que los juegos de pelea, a pesar de ser algo más de nicho, siempre 
 
 <p>Eso es todo para comentar.</p>
 
-<p><b>¡Nos vemos!</b></p>]]></content><author><name></name></author><category term="geek" /><summary type="html"><![CDATA[Los juegos de pelea son un género que, a día de hoy, considero de nicho. No es un género frecuente y, cuando lo es, suele estar muy simplificado. Un ejemplo de esto son los juegos de “pelea” para celulares, donde parecen más un juego de pelea por turnos que un juego realmente de pelea, donde tenés que prestar atención, improvisar y, cuando lográs conectar un golpe, pasar de la improvisación a la secuencia de un combo. Creo que va quedando de lado.]]></summary></entry><entry><title type="html">Mi primer post</title><link href="http://0.0.0.0:4000/jromano743/inicio/2026/01/08/mi-primer-post/" rel="alternate" type="text/html" title="Mi primer post" /><published>2026-01-08T00:00:00-06:00</published><updated>2026-01-08T00:00:00-06:00</updated><id>http://0.0.0.0:4000/jromano743/inicio/2026/01/08/mi-primer-post</id><content type="html" xml:base="http://0.0.0.0:4000/jromano743/inicio/2026/01/08/mi-primer-post/"><![CDATA[<h3>Si, esto es otro blog.</h3>
-<p>
-Pero este es distinto, es personalizado, desde 0 e informal. Con un archivo que puedo guardar en mi PC. No usa base de datos ni tiene comentarios en tiempo real. No tiene ningun servicio!
-</p>
-<h4>¿Por qué?</h4>
-<p>Se que re inventar la rueda no es lo mejor, pero quiero tener un espacio desligado de redes sociales o proyectos especificos. Este blog es ese espacio, donde un dia puedo subir algo de programacion, otro dia de videojuegos, un fin de semana algun tutorial, alguna curiosidad o pensamientos u opiniones sobre alguna serie o pelicula. En fin, un espacio personal.</p>
-
-<h4>¿Y si quiero comentar?</h4>
-<p>Esa es la mejor parte! Aun no lo se :P pero algo se me ocurrirá, no habrá usuarios ni ingreso de datos, no quiero ninguna DB ni hacer algo complicado.</p>
-
-<p><b>Nos vemos!</b></p>]]></content><author><name></name></author><category term="inicio" /><summary type="html"><![CDATA[Si, esto es otro blog. Pero este es distinto, es personalizado, desde 0 e informal. Con un archivo que puedo guardar en mi PC. No usa base de datos ni tiene comentarios en tiempo real. No tiene ningun servicio! ¿Por qué? Se que re inventar la rueda no es lo mejor, pero quiero tener un espacio desligado de redes sociales o proyectos especificos. Este blog es ese espacio, donde un dia puedo subir algo de programacion, otro dia de videojuegos, un fin de semana algun tutorial, alguna curiosidad o pensamientos u opiniones sobre alguna serie o pelicula. En fin, un espacio personal.]]></summary></entry><entry><title type="html">Repo PWA</title><link href="http://0.0.0.0:4000/jromano743/techie/2026/01/08/repo-pwa/" rel="alternate" type="text/html" title="Repo PWA" /><published>2026-01-08T00:00:00-06:00</published><updated>2026-01-08T00:00:00-06:00</updated><id>http://0.0.0.0:4000/jromano743/techie/2026/01/08/repo-pwa</id><content type="html" xml:base="http://0.0.0.0:4000/jromano743/techie/2026/01/08/repo-pwa/"><![CDATA[<p>Este es un repositorio/sitio web en donde publico algunas Progressive Web Apps con la opcion de instalacion sencilla en Andriod.</p>
+<p><b>¡Nos vemos!</b></p>]]></content><author><name></name></author><category term="geek" /><summary type="html"><![CDATA[Los juegos de pelea son un género que, a día de hoy, considero de nicho. No es un género frecuente y, cuando lo es, suele estar muy simplificado. Un ejemplo de esto son los juegos de “pelea” para celulares, donde parecen más un juego de pelea por turnos que un juego realmente de pelea, donde tenés que prestar atención, improvisar y, cuando lográs conectar un golpe, pasar de la improvisación a la secuencia de un combo. Creo que va quedando de lado.]]></summary></entry><entry><title type="html">Repo PWA</title><link href="http://0.0.0.0:4000/jromano743/techie/2026/01/08/repo-pwa/" rel="alternate" type="text/html" title="Repo PWA" /><published>2026-01-08T00:00:00-06:00</published><updated>2026-01-08T00:00:00-06:00</updated><id>http://0.0.0.0:4000/jromano743/techie/2026/01/08/repo-pwa</id><content type="html" xml:base="http://0.0.0.0:4000/jromano743/techie/2026/01/08/repo-pwa/"><![CDATA[<p>Este es un repositorio/sitio web en donde publico algunas Progressive Web Apps con la opcion de instalacion sencilla en Andriod.</p>
 
 <p>Estas aplicaciones son mera curiosidad y pruebas. Con el tiempo iré agregando más.</p>
 
@@ -952,7 +987,17 @@ Pero este es distinto, es personalizado, desde 0 e informal. Con un archivo que 
 
 </div>
 
-<p><b>¡Nos vemos!</b></p>]]></content><author><name></name></author><category term="techie" /><summary type="html"><![CDATA[Este es un repositorio/sitio web en donde publico algunas Progressive Web Apps con la opcion de instalacion sencilla en Andriod.]]></summary></entry><entry><title type="html">Blog: El Sempp</title><link href="http://0.0.0.0:4000/jromano743/techie/2026/01/07/blog-el-semp/" rel="alternate" type="text/html" title="Blog: El Sempp" /><published>2026-01-07T00:00:00-06:00</published><updated>2026-01-07T00:00:00-06:00</updated><id>http://0.0.0.0:4000/jromano743/techie/2026/01/07/blog-el-semp</id><content type="html" xml:base="http://0.0.0.0:4000/jromano743/techie/2026/01/07/blog-el-semp/"><![CDATA[<p>
+<p><b>¡Nos vemos!</b></p>]]></content><author><name></name></author><category term="techie" /><summary type="html"><![CDATA[Este es un repositorio/sitio web en donde publico algunas Progressive Web Apps con la opcion de instalacion sencilla en Andriod.]]></summary></entry><entry><title type="html">Mi primer post</title><link href="http://0.0.0.0:4000/jromano743/inicio/2026/01/08/mi-primer-post/" rel="alternate" type="text/html" title="Mi primer post" /><published>2026-01-08T00:00:00-06:00</published><updated>2026-01-08T00:00:00-06:00</updated><id>http://0.0.0.0:4000/jromano743/inicio/2026/01/08/mi-primer-post</id><content type="html" xml:base="http://0.0.0.0:4000/jromano743/inicio/2026/01/08/mi-primer-post/"><![CDATA[<h3>Si, esto es otro blog.</h3>
+<p>
+Pero este es distinto, es personalizado, desde 0 e informal. Con un archivo que puedo guardar en mi PC. No usa base de datos ni tiene comentarios en tiempo real. No tiene ningun servicio!
+</p>
+<h4>¿Por qué?</h4>
+<p>Se que re inventar la rueda no es lo mejor, pero quiero tener un espacio desligado de redes sociales o proyectos especificos. Este blog es ese espacio, donde un dia puedo subir algo de programacion, otro dia de videojuegos, un fin de semana algun tutorial, alguna curiosidad o pensamientos u opiniones sobre alguna serie o pelicula. En fin, un espacio personal.</p>
+
+<h4>¿Y si quiero comentar?</h4>
+<p>Esa es la mejor parte! Aun no lo se :P pero algo se me ocurrirá, no habrá usuarios ni ingreso de datos, no quiero ninguna DB ni hacer algo complicado.</p>
+
+<p><b>Nos vemos!</b></p>]]></content><author><name></name></author><category term="inicio" /><summary type="html"><![CDATA[Si, esto es otro blog. Pero este es distinto, es personalizado, desde 0 e informal. Con un archivo que puedo guardar en mi PC. No usa base de datos ni tiene comentarios en tiempo real. No tiene ningun servicio! ¿Por qué? Se que re inventar la rueda no es lo mejor, pero quiero tener un espacio desligado de redes sociales o proyectos especificos. Este blog es ese espacio, donde un dia puedo subir algo de programacion, otro dia de videojuegos, un fin de semana algun tutorial, alguna curiosidad o pensamientos u opiniones sobre alguna serie o pelicula. En fin, un espacio personal.]]></summary></entry><entry><title type="html">Blog: El Sempp</title><link href="http://0.0.0.0:4000/jromano743/techie/2026/01/07/blog-el-semp/" rel="alternate" type="text/html" title="Blog: El Sempp" /><published>2026-01-07T00:00:00-06:00</published><updated>2026-01-07T00:00:00-06:00</updated><id>http://0.0.0.0:4000/jromano743/techie/2026/01/07/blog-el-semp</id><content type="html" xml:base="http://0.0.0.0:4000/jromano743/techie/2026/01/07/blog-el-semp/"><![CDATA[<p>
   <b>El Sempp</b> es otro blog donde manejo un enfoque de “tutoriales”, ya que muchas veces me pidieron consejos o me dijeron que explico bien algunos temas. Pensé entonces en crear algo que pueda aportar y ser útil.
 </p>
 

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>
+    
+      Lobby Lab · Cipher: Mi nuevo bot de Telegram para jugar con criptografía
+    
+  </title>
+
+  <!-- Open Graph -->
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Lobby Lab">
+
+<meta property="og:title"
+      content="Cipher: Mi nuevo bot de Telegram para jugar con criptografía">
+
+<meta property="og:url"
+      content="https://jromano743.github.io/jromano743/techie/2026/01/25/bot-cipher/">
+
+<meta property="og:description"
+      content="
+                Últimamente he estado metido en un “agujero de conejo” con el tema de la privacidad y el manejo de datos. Así que, fiel a mi estilo de “aprender haciendo”, m...
+              ">
+
+<meta property="og:image"
+      content="https://jromano743.github.io/jromano743/assets/images/default_cover.webp">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="twitter:title"
+      content="Cipher: Mi nuevo bot de Telegram para jugar con criptografía">
+
+<meta name="twitter:description"
+      content="
+                Últimamente he estado metido en un “agujero de conejo” con el tema de la privacidad y el manejo de datos. Así que, fiel a mi estilo de “aprender haciendo”, m...
+              ">
+
+<meta name="twitter:image"
+      content="https://jromano743.github.io/jromano743/assets/images/default_cover.webp">
+
+
+  <link rel="stylesheet" href="/jromano743/assets/style.css">
+</head>
+
+<body>
+  <div class="page">
+
+    <header class="header">
+      <h1 class="site-title">Lobby Lab</h1>
+      <nav class="nav">
+        <a href="/jromano743/">Inicio</a>
+        <a href="/jromano743/techie/">Techie</a>
+        <a href="/jromano743/geek/">Geek</a>
+        <a href="/jromano743/about/">About</a>
+      </nav>
+    </header>
+
+    <main class="main">
+      <article class="post">
+
+  <header class="post-header">
+    <h2>
+      <span class="post-category">
+        Techie
+      </span>
+      >> Cipher: Mi nuevo bot de Telegram para jugar con criptografía
+    </h2>
+    <small class="post-date">
+      2026-01-25
+    </small>
+  </header>
+
+  <section class="post-content">
+    <p>Últimamente he estado metido en un “agujero de conejo” con el tema de la privacidad y el manejo de datos. Así que, fiel a mi estilo de “aprender haciendo”, me puse a programar <strong>Cipher</strong>, un bot de Telegram que funciona como una navaja suiza de bolsillo para cifrar mensajes y manipular texto.</p>
+
+<p>Aún está en etapa de <strong>prototipo</strong> (está en el horno, como quien dice), pero ya tiene una estructura sólida que me tiene bastante emocionado.</p>
+
+<h3 id="por-qué-existe-cipher">¿Por qué existe Cipher?</h3>
+<p>La idea es simple: tener una herramienta a mano que te permita cifrar o procesar información sin salir de la app de mensajería. No es que estemos ocultando secretos de estado, pero hay algo muy satisfactorio en mandar un mensaje que solo alguien con la “llave” pueda leer, o simplemente generar un código QR rápido sin entrar a páginas llenas de publicidad.</p>
+
+<div class="img-frame">
+    <img src="/jromano743/assets/images/cipherbot/commands.webp" alt="Cipher Bot Commands" />
+</div>
+
+<h3 id="el-cerebro-detrás-de-cipher">El “cerebro” detrás de Cipher</h3>
+<p>Para los más curiosos, estoy armando el bot con <code class="language-plaintext highlighter-rouge">python-telegram-bot</code>. La arquitectura está separada por controladores (<code class="language-plaintext highlighter-rouge">Controllers</code>), lo que me permite escalar las funciones de forma organizada. Aquí les cuento un poco qué puede hacer hasta ahora:</p>
+
+<ul>
+  <li><strong>Cifrado Clásico (<code class="language-plaintext highlighter-rouge">/cipher</code>):</strong> La función principal. Permite elegir entre diferentes algoritmos para encriptar y desencriptar texto.</li>
+  <li><strong>Hashing de archivos (<code class="language-plaintext highlighter-rouge">/hash</code> y <code class="language-plaintext highlighter-rouge">/hashall</code>):</strong> Si alguna vez necesitas verificar la integridad de un archivo, el bot te genera el hash (MD5, SHA256, etc.) en un segundo.</li>
+  <li><strong>Generador de seguridad:</strong> Tiene comandos para crear <strong>UUIDs</strong> y <strong>contraseñas seguras</strong> de forma aleatoria (<code class="language-plaintext highlighter-rouge">/uuid</code>, <code class="language-plaintext highlighter-rouge">/password</code>).</li>
+  <li><strong>Utilidades de texto:</strong> Cosas divertidas como invertir el texto (<code class="language-plaintext highlighter-rouge">/reverse</code>) o limpiar caracteres especiales.</li>
+  <li><strong>QR Generator:</strong> Le pasas un texto o link y te devuelve el código QR listo para usar.</li>
+</ul>
+
+<div class="img-frame">
+    <img src="/jromano743/assets/images/cipherbot/command_help.webp" alt="Cipher Bot Help command" />
+</div>
+
+<h3 id="un-vistazo-a-las-vistas">Un vistazo a las vistas</h3>
+<p>Lo que más me gusta de cómo está quedando es el menú interactivo. Uso <code class="language-plaintext highlighter-rouge">CallbackQueryHandler</code> para que no tengas que escribir comandos complejos; el bot te va guiando con botones para elegir el algoritmo o la acción que querés realizar.</p>
+
+<div class="img-frame">
+    <img src="/jromano743/assets/images/cipherbot/encrypt.webp" alt="Cipher Bot Encrypt" />
+</div>
+
+<p>Incluso le puse un “Job Queue” que limpia el estado de los usuarios cada minuto para que no se quede nada trabado en memoria. Es un detalle técnico, pero hace que la experiencia sea mucho más fluida y eficiente.</p>
+
+<h3 id="estado-actual-prototipo">Estado actual: Prototipo</h3>
+<p>Como les dije, todavía no lo he publicado oficialmente. Estoy puliendo el <code class="language-plaintext highlighter-rouge">unified_handler</code>, que es el que se encarga de decidir si lo que mandaste es un texto para cifrar o un documento para analizar.</p>
+
+<p>Todavía hay algunos comandos comentados en el código (como el de inspeccionar metadatos de archivos), porque quiero estar seguro de que funcionen perfecto antes de liberarlos al público.</p>
+
+<h3 id="conclusión-lo-que-se-viene">Conclusión: Lo que se viene</h3>
+<p>Me parece genial cómo un simple bot de Telegram puede terminar siendo una herramienta de aprendizaje tan potente sobre criptografía y manejo de servidores. Por ahora, <strong>Cipher</strong> sigue en mi entorno de desarrollo, pero pronto espero poder compartirles el link para que lo prueben y me digan qué les parece.</p>
+
+<p>Me encanta cuando este tipo de proyectos “pequeños” terminan enseñándote más que un curso entero. ¡Estén atentos para cuando salga la versión definitiva!</p>
+
+<p>¡Nos vemos!</p>
+
+  </section>
+
+  
+  
+  
+
+  <!-- =========================
+       COMENTARIOS PUBLICADOS
+  ========================== -->
+  <section class="comments">
+    <h3>Comentarios</h3>
+
+    
+      <p class="no-comments">Todavía no hay comentarios.</p>
+    
+  </section>
+
+  <!-- =========================
+     FORMULARIO DE COMENTARIOS
+========================== -->
+<section class="comment-form">
+  <h3 class="comment-form__title">Dejar un comentario</h3>
+
+  <form
+    class="comment-form__form"
+    action="https://formsubmit.co/comentarios.jmb@gmail.com"
+    method="POST"
+  >
+
+    <!-- Configuración FormSubmit -->
+    <input type="hidden" name="_subject" value="Nuevo comentario en Cipher: Mi nuevo bot de Telegram para jugar con criptografía">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_next" value="https://jromano743.github.io/jromano743//techie/2026/01/25/bot-cipher/#comentarios">
+
+    <!-- Contexto del post -->
+    <input type="hidden" name="post" value="Cipher: Mi nuevo bot de Telegram para jugar con criptografía">
+    <input type="hidden" name="url" value="https://jromano743.github.io/jromano743//techie/2026/01/25/bot-cipher/">
+
+    <label class="comment-form__field">
+      <span class="comment-form__label">Nombre o Nickname</span>
+      <input
+        class="comment-form__input"
+        type="text"
+        name="user"
+        required
+      >
+    </label>
+
+    <label class="comment-form__field">
+      <span class="comment-form__label">Email (opcional)</span>
+      <input
+        class="comment-form__input"
+        type="email"
+        name="email"
+      >
+    </label>
+
+    <label class="comment-form__field">
+      <span class="comment-form__label">Comentario</span>
+      <textarea
+        class="comment-form__textarea"
+        name="text"
+        rows="4"
+        required
+      ></textarea>
+    </label>
+
+    <button class="comment-form__submit" type="submit">
+      Enviar comentario
+    </button>
+  </form>
+
+  <small class="comment-form__note">
+    Los comentarios no se publican automáticamente.<br>
+    Se revisan antes de aparecer en el sitio.
+  </small>
+</section>
+
+</article>
+
+    </main>
+
+    <footer class="footer">
+      © 2001–2026 sempp
+    </footer>
+
+  </div>
+</body>
+</html>
+
