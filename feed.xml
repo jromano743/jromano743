@@ -1,4 +1,69 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://0.0.0.0:4000/jromano743/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/jromano743/" rel="alternate" type="text/html" /><updated>2026-01-29T14:42:54-06:00</updated><id>http://0.0.0.0:4000/jromano743/feed.xml</id><title type="html">Lobby Lab</title><subtitle>Un sitio personal con estética del 2001</subtitle><entry><title type="html">WPP-Visualization: Chats de WhatsApp en data pura</title><link href="http://0.0.0.0:4000/jromano743/techie/2026/01/26/wrapp-whatsapp/" rel="alternate" type="text/html" title="WPP-Visualization: Chats de WhatsApp en data pura" /><published>2026-01-26T00:00:00-06:00</published><updated>2026-01-26T00:00:00-06:00</updated><id>http://0.0.0.0:4000/jromano743/techie/2026/01/26/wrapp-whatsapp</id><content type="html" xml:base="http://0.0.0.0:4000/jromano743/techie/2026/01/26/wrapp-whatsapp/"><![CDATA[<p>Siempre he pensado que nuestros chats dicen mucho más de nosotros de lo que creemos. No solo por el contenido, sino por los patrones: quién escribe más, a qué hora se mueren los grupos o cuál es ese emoji que ya perdió todo su sentido de tanto usarlo. Así que, siguiendo mi costumbre de armar herramientas para entender lo que pasa por mis manos, creé <strong>WPP-Visualization</strong>.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://0.0.0.0:4000/jromano743/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/jromano743/" rel="alternate" type="text/html" /><updated>2026-01-29T16:59:42-06:00</updated><id>http://0.0.0.0:4000/jromano743/feed.xml</id><title type="html">Lobby Lab</title><subtitle>Un sitio personal con estética del 2001</subtitle><entry><title type="html">El día que aprendí a hablar palomés</title><link href="http://0.0.0.0:4000/jromano743/inicio/2026/01/28/el-dia-que-aprendi-a-hablar-paloma/" rel="alternate" type="text/html" title="El día que aprendí a hablar palomés" /><published>2026-01-28T00:00:00-06:00</published><updated>2026-01-28T00:00:00-06:00</updated><id>http://0.0.0.0:4000/jromano743/inicio/2026/01/28/el-dia-que-aprendi-a-hablar-paloma</id><content type="html" xml:base="http://0.0.0.0:4000/jromano743/inicio/2026/01/28/el-dia-que-aprendi-a-hablar-paloma/"><![CDATA[<p>Hace mucho, mucho tiempo, en un lejano 2022, me encontraba pensando qué proyecto hacer para mi trabajo final de programación de la universidad. Necesitaba hacer un juego con el motor de Unity en menos de cuatro días.</p>
+
+<p>Traté y traté de pensar algo que pudiera hacer rápido, ya que además de esa materia tenía la semana muy ocupada. El juego debía estar listo y enviado para el viernes.</p>
+
+<ul>
+  <li><strong>Lunes:</strong> Nada.</li>
+  <li><strong>Martes:</strong> Aún nada.</li>
+  <li><strong>Miércoles:</strong> Pánico. Tengo que hacer algo urgente.</li>
+</ul>
+
+<p>Bueno, pausa. Tengo que pensar qué necesito:</p>
+<ul>
+  <li>Animaciones.</li>
+  <li>Un modelo 3D.</li>
+  <li>Una mecánica sencilla de implementar.</li>
+  <li>Una estructura que me permita construir un <em>gameloop</em> completo.</li>
+</ul>
+
+<p>Y solo tenía un día y medio (ya era miércoles por la tarde). Ese día, mientras intentaba darle forma a una idea, estaba lloviendo. El sonido de la lluvia era relajante, pero había un problema: las palomas se acomodaron debajo de mi ventana y no dejaban de hacer ruido.</p>
+
+<p>Está bien, está lloviendo, ¿pero es necesario que hagan tanto escándalo?</p>
+
+<p>Pasaron unos 15 o 20 minutos. El ruido me estaba enloqueciendo y la frustración crecía. Quería tirarles una bola de papel para que se fueran. Pero son animales; por más molestos que fueran, no lo haría. Pero las ganas estaban… ¡un momento! Aquí hay un deseo y un objetivo, por lo tanto, tenemos un juego.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Elemento</th>
+      <th style="text-align: left">Descripción</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><strong>Objetivo</strong></td>
+      <td style="text-align: left">Ahuyentar a todas las palomas y guiarlas hacia una ventana.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Mecánica</strong></td>
+      <td style="text-align: left">Lanzar bolas de papel (con recarga) para alejarlas del jugador.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Dinámica</strong></td>
+      <td style="text-align: left">Las palomas te persiguen; si se acercan mucho, tu nivel de estrés sube.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Condición</strong></td>
+      <td style="text-align: left">Ganas si despejas el área; pierdes si la barra de estrés llega al máximo.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>¡Okey, a prototipar!</p>
+
+<p>Cuatro horas después, el juego ya estaba. Con tres niveles funcionales, solo faltaba decorarlo y colocarle sonido. Eso sería tarea para el día siguiente.</p>
+
+<p>Al día siguiente me puse a construir los <em>assets</em> y la animación de las palomas. Pero surgió un nuevo problema: no encontraba ningún sonido bueno de palomas. Lo peor es que las palomas reales ya se habían ido y no podía grabarlas.</p>
+
+<p>Entonces, tras pensar mucho y ver que el sonido era lo único que me faltaba, tuve la idea más sencilla del mundo: grabarme haciendo sonidos de paloma.</p>
+
+<p>Lo hice. Fueron exactamente siete tomas, de las cuales tres fueron las ganadoras. Igual no sonaba exactamente a una paloma, por lo que tuve que usar Audacity para modificar el audio, haciéndolo más agudo y rápido. Al final, nadie se dio cuenta y pasaba totalmente desapercibido.</p>
+
+<p>Se vale improvisar cuando eres el programador, director y artista al mismo tiempo, jajaja.</p>
+
+<p>Creo que ese proyecto no verá la luz porque quedó algo flojo en cuanto a estética, pero si algún día decido rehacerlo, prometo mantener esos mismos audios en el juego.</p>
+
+<p>¡Nos vemos!</p>]]></content><author><name></name></author><category term="inicio" /><summary type="html"><![CDATA[Hace mucho, mucho tiempo, en un lejano 2022, me encontraba pensando qué proyecto hacer para mi trabajo final de programación de la universidad. Necesitaba hacer un juego con el motor de Unity en menos de cuatro días.]]></summary></entry><entry><title type="html">WPP-Visualization: Chats de WhatsApp en data pura</title><link href="http://0.0.0.0:4000/jromano743/techie/2026/01/26/wrapp-whatsapp/" rel="alternate" type="text/html" title="WPP-Visualization: Chats de WhatsApp en data pura" /><published>2026-01-26T00:00:00-06:00</published><updated>2026-01-26T00:00:00-06:00</updated><id>http://0.0.0.0:4000/jromano743/techie/2026/01/26/wrapp-whatsapp</id><content type="html" xml:base="http://0.0.0.0:4000/jromano743/techie/2026/01/26/wrapp-whatsapp/"><![CDATA[<p>Siempre he pensado que nuestros chats dicen mucho más de nosotros de lo que creemos. No solo por el contenido, sino por los patrones: quién escribe más, a qué hora se mueren los grupos o cuál es ese emoji que ya perdió todo su sentido de tanto usarlo. Así que, siguiendo mi costumbre de armar herramientas para entender lo que pasa por mis manos, creé <strong>WPP-Visualization</strong>.</p>
 
 <p>Es un proyecto que funciona como un “analizador de laboratorio” para los archivos de exportación de WhatsApp, permitiendo generar un reporte visual de lo que realmente sucede en una conversación.</p>
 
@@ -1036,14 +1101,4 @@ Tengo fe en que los juegos de pelea, a pesar de ser algo más de nicho, siempre 
 
 </div>
 
-<p><b>¡Nos vemos!</b></p>]]></content><author><name></name></author><category term="techie" /><summary type="html"><![CDATA[Este es un repositorio/sitio web en donde publico algunas Progressive Web Apps con la opcion de instalacion sencilla en Andriod.]]></summary></entry><entry><title type="html">Mi primer post</title><link href="http://0.0.0.0:4000/jromano743/inicio/2026/01/08/mi-primer-post/" rel="alternate" type="text/html" title="Mi primer post" /><published>2026-01-08T00:00:00-06:00</published><updated>2026-01-08T00:00:00-06:00</updated><id>http://0.0.0.0:4000/jromano743/inicio/2026/01/08/mi-primer-post</id><content type="html" xml:base="http://0.0.0.0:4000/jromano743/inicio/2026/01/08/mi-primer-post/"><![CDATA[<h3>Si, esto es otro blog.</h3>
-<p>
-Pero este es distinto, es personalizado, desde 0 e informal. Con un archivo que puedo guardar en mi PC. No usa base de datos ni tiene comentarios en tiempo real. No tiene ningun servicio!
-</p>
-<h4>¿Por qué?</h4>
-<p>Se que re inventar la rueda no es lo mejor, pero quiero tener un espacio desligado de redes sociales o proyectos especificos. Este blog es ese espacio, donde un dia puedo subir algo de programacion, otro dia de videojuegos, un fin de semana algun tutorial, alguna curiosidad o pensamientos u opiniones sobre alguna serie o pelicula. En fin, un espacio personal.</p>
-
-<h4>¿Y si quiero comentar?</h4>
-<p>Esa es la mejor parte! Aun no lo se :P pero algo se me ocurrirá, no habrá usuarios ni ingreso de datos, no quiero ninguna DB ni hacer algo complicado.</p>
-
-<p><b>Nos vemos!</b></p>]]></content><author><name></name></author><category term="inicio" /><summary type="html"><![CDATA[Si, esto es otro blog. Pero este es distinto, es personalizado, desde 0 e informal. Con un archivo que puedo guardar en mi PC. No usa base de datos ni tiene comentarios en tiempo real. No tiene ningun servicio! ¿Por qué? Se que re inventar la rueda no es lo mejor, pero quiero tener un espacio desligado de redes sociales o proyectos especificos. Este blog es ese espacio, donde un dia puedo subir algo de programacion, otro dia de videojuegos, un fin de semana algun tutorial, alguna curiosidad o pensamientos u opiniones sobre alguna serie o pelicula. En fin, un espacio personal.]]></summary></entry></feed>
+<p><b>¡Nos vemos!</b></p>]]></content><author><name></name></author><category term="techie" /><summary type="html"><![CDATA[Este es un repositorio/sitio web en donde publico algunas Progressive Web Apps con la opcion de instalacion sencilla en Andriod.]]></summary></entry></feed>
