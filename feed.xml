@@ -1,4 +1,53 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://0.0.0.0:4000/jromano743/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/jromano743/" rel="alternate" type="text/html" /><updated>2026-01-29T14:08:15-06:00</updated><id>http://0.0.0.0:4000/jromano743/feed.xml</id><title type="html">Lobby Lab</title><subtitle>Un sitio personal con estética del 2001</subtitle><entry><title type="html">Cipher: Mi nuevo bot de Telegram para jugar con criptografía</title><link href="http://0.0.0.0:4000/jromano743/techie/2026/01/25/bot-cipher/" rel="alternate" type="text/html" title="Cipher: Mi nuevo bot de Telegram para jugar con criptografía" /><published>2026-01-25T00:00:00-06:00</published><updated>2026-01-25T00:00:00-06:00</updated><id>http://0.0.0.0:4000/jromano743/techie/2026/01/25/bot-cipher</id><content type="html" xml:base="http://0.0.0.0:4000/jromano743/techie/2026/01/25/bot-cipher/"><![CDATA[<p>Últimamente he estado metido en un “agujero de conejo” con el tema de la privacidad y el manejo de datos. Así que, fiel a mi estilo de “aprender haciendo”, me puse a programar <strong>Cipher</strong>, un bot de Telegram que funciona como una navaja suiza de bolsillo para cifrar mensajes y manipular texto.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://0.0.0.0:4000/jromano743/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/jromano743/" rel="alternate" type="text/html" /><updated>2026-01-29T14:42:54-06:00</updated><id>http://0.0.0.0:4000/jromano743/feed.xml</id><title type="html">Lobby Lab</title><subtitle>Un sitio personal con estética del 2001</subtitle><entry><title type="html">WPP-Visualization: Chats de WhatsApp en data pura</title><link href="http://0.0.0.0:4000/jromano743/techie/2026/01/26/wrapp-whatsapp/" rel="alternate" type="text/html" title="WPP-Visualization: Chats de WhatsApp en data pura" /><published>2026-01-26T00:00:00-06:00</published><updated>2026-01-26T00:00:00-06:00</updated><id>http://0.0.0.0:4000/jromano743/techie/2026/01/26/wrapp-whatsapp</id><content type="html" xml:base="http://0.0.0.0:4000/jromano743/techie/2026/01/26/wrapp-whatsapp/"><![CDATA[<p>Siempre he pensado que nuestros chats dicen mucho más de nosotros de lo que creemos. No solo por el contenido, sino por los patrones: quién escribe más, a qué hora se mueren los grupos o cuál es ese emoji que ya perdió todo su sentido de tanto usarlo. Así que, siguiendo mi costumbre de armar herramientas para entender lo que pasa por mis manos, creé <strong>WPP-Visualization</strong>.</p>
+
+<p>Es un proyecto que funciona como un “analizador de laboratorio” para los archivos de exportación de WhatsApp, permitiendo generar un reporte visual de lo que realmente sucede en una conversación.</p>
+
+<h3 id="por-qué-analizar-whatsapp">¿Por qué analizar WhatsApp?</h3>
+<p>La curiosidad fue el motor principal. WhatsApp te permite exportar el historial en un <code class="language-plaintext highlighter-rouge">.txt</code> que, a simple vista, es una pared de texto inmanejable. Quería una forma rápida de procesar eso y obtener métricas reales sin tener que subir mis datos a páginas de terceros que no sé qué hacen con la información.</p>
+
+<p>Con este script, el procesamiento es local y los resultados son directos. Es, básicamente, crearte tu propio “WhatsApp Wrapped” cuando quieras.</p>
+
+<h3 id="el-desafío-de-la-data-sucia">El desafío de la “data sucia”</h3>
+<p>Para los que venimos del lado del código, sabemos que el mundo real no viene en un JSON ordenado. El mayor reto aquí fue la <strong>sanitización de los datos</strong>.</p>
+
+<p>El archivo de WhatsApp es traicionero: cambia según el idioma del teléfono, el sistema operativo y el formato de fecha. El script tiene que ser capaz de identificar qué es un mensaje real y qué es “ruido” del sistema (como cuando alguien cambia la descripción del grupo o sale de la llamada). Lograr que el parser sea lo suficientemente robusto para no romperse con un emoji mal puesto fue la parte más entretenida.</p>
+
+<h3 id="qué-hay-bajo-el-capó">¿Qué hay bajo el capó?</h3>
+<p>El proyecto está construido principalmente con <strong>Python</strong>, aprovechando la potencia de <code class="language-plaintext highlighter-rouge">pandas</code> para el manejo de estructuras de datos y <code class="language-plaintext highlighter-rouge">matplotlib/seaborn</code> para la parte visual. Aquí algunas de las métricas que saca:</p>
+
+<ul>
+  <li><strong>Activity Heatmap:</strong> ¿El grupo está vivo a las 3 AM o es estrictamente de horario laboral?</li>
+  <li><strong>User Contributions:</strong> El ranking definitivo de quién manda más mensajes y quién solo aparece para leer.</li>
+  <li><strong>Emoji Counter:</strong> Un análisis de los emojis más frecuentes para entender el “mood” general del chat.</li>
+  <li><strong>Media Tracking:</strong> Identifica cuántos mensajes fueron fotos, videos o audios (aunque WhatsApp los marque como “omitidos” en el texto).</li>
+</ul>
+
+<div class="gallery">
+
+  <div class="img-frame">
+    <img src="/jromano743/assets/images/wppvisualization/emojis.webp" alt="Tabla de Emojis" />
+      <span>FIG 01 · Tabla de emojis</span>
+  </div>
+
+  <div class="img-frame">
+    <img src="/jromano743/assets/images/wppvisualization/messages.webp" alt="Tabla de mensajes" />
+      <span>FIG 02 · Tabla de mensajes</span>
+  </div>
+
+</div>
+
+<h3 id="estructura-y-modularidad">Estructura y Modularidad</h3>
+<p>Al igual que con mis otros proyectos, traté de mantener el código organizado. El procesamiento se divide en etapas claras: limpieza, transformación y finalmente la visualización. Esto me permite, en el futuro, agregar nuevos módulos de análisis (como análisis de sentimiento) sin tener que reescribir la base del parser.</p>
+
+<h3 id="estado-del-proyecto-funcional-y-abierto">Estado del proyecto: Funcional y abierto</h3>
+<p>A diferencia de otros prototipos, <strong>WPP-Visualization</strong> ya es funcional y lo pueden encontrar en mi GitHub. Todavía hay detalles que pulir, especialmente en el soporte para diferentes formatos de exportación regionales, pero la base ya está lista para que cualquiera pueda tirar su <code class="language-plaintext highlighter-rouge">.txt</code> y ver qué sale.</p>
+
+<h3 id="conclusión">Conclusión</h3>
+<p>Proyectos como este me recuerdan por qué me gusta programar: transformar un archivo de texto aburrido en información visual y comprensible es casi como hacer magia. Si te da curiosidad saber qué tan intenso es tu grupo de amigos o cuántos stickers mandas por día, dale una mirada al repo.</p>
+
+<p>¡Nos vemos en el próximo commit!</p>
+
+<p><a href="https://github.com/jromano743/wpp-visualization" target="_blank">Repo en GitHub: wpp-visualization</a></p>]]></content><author><name></name></author><category term="techie" /><summary type="html"><![CDATA[Siempre he pensado que nuestros chats dicen mucho más de nosotros de lo que creemos. No solo por el contenido, sino por los patrones: quién escribe más, a qué hora se mueren los grupos o cuál es ese emoji que ya perdió todo su sentido de tanto usarlo. Así que, siguiendo mi costumbre de armar herramientas para entender lo que pasa por mis manos, creé WPP-Visualization.]]></summary></entry><entry><title type="html">Cipher: Mi nuevo bot de Telegram para jugar con criptografía</title><link href="http://0.0.0.0:4000/jromano743/techie/2026/01/25/bot-cipher/" rel="alternate" type="text/html" title="Cipher: Mi nuevo bot de Telegram para jugar con criptografía" /><published>2026-01-25T00:00:00-06:00</published><updated>2026-01-25T00:00:00-06:00</updated><id>http://0.0.0.0:4000/jromano743/techie/2026/01/25/bot-cipher</id><content type="html" xml:base="http://0.0.0.0:4000/jromano743/techie/2026/01/25/bot-cipher/"><![CDATA[<p>Últimamente he estado metido en un “agujero de conejo” con el tema de la privacidad y el manejo de datos. Así que, fiel a mi estilo de “aprender haciendo”, me puse a programar <strong>Cipher</strong>, un bot de Telegram que funciona como una navaja suiza de bolsillo para cifrar mensajes y manipular texto.</p>
 
 <p>Aún está en etapa de <strong>prototipo</strong> (está en el horno, como quien dice), pero ya tiene una estructura sólida que me tiene bastante emocionado.</p>
 
@@ -997,38 +1046,4 @@ Pero este es distinto, es personalizado, desde 0 e informal. Con un archivo que 
 <h4>¿Y si quiero comentar?</h4>
 <p>Esa es la mejor parte! Aun no lo se :P pero algo se me ocurrirá, no habrá usuarios ni ingreso de datos, no quiero ninguna DB ni hacer algo complicado.</p>
 
-<p><b>Nos vemos!</b></p>]]></content><author><name></name></author><category term="inicio" /><summary type="html"><![CDATA[Si, esto es otro blog. Pero este es distinto, es personalizado, desde 0 e informal. Con un archivo que puedo guardar en mi PC. No usa base de datos ni tiene comentarios en tiempo real. No tiene ningun servicio! ¿Por qué? Se que re inventar la rueda no es lo mejor, pero quiero tener un espacio desligado de redes sociales o proyectos especificos. Este blog es ese espacio, donde un dia puedo subir algo de programacion, otro dia de videojuegos, un fin de semana algun tutorial, alguna curiosidad o pensamientos u opiniones sobre alguna serie o pelicula. En fin, un espacio personal.]]></summary></entry><entry><title type="html">Blog: El Sempp</title><link href="http://0.0.0.0:4000/jromano743/techie/2026/01/07/blog-el-semp/" rel="alternate" type="text/html" title="Blog: El Sempp" /><published>2026-01-07T00:00:00-06:00</published><updated>2026-01-07T00:00:00-06:00</updated><id>http://0.0.0.0:4000/jromano743/techie/2026/01/07/blog-el-semp</id><content type="html" xml:base="http://0.0.0.0:4000/jromano743/techie/2026/01/07/blog-el-semp/"><![CDATA[<p>
-  <b>El Sempp</b> es otro blog donde manejo un enfoque de “tutoriales”, ya que muchas veces me pidieron consejos o me dijeron que explico bien algunos temas. Pensé entonces en crear algo que pueda aportar y ser útil.
-</p>
-
-<p>
-  Algunas veces también consideré hacer un canal de YouTube o una cuenta de TikTok, pero todavía tengo dudas. No creo poder dedicarle el tiempo que se merece, al menos no por ahora.
-</p>
-
-<h4>¿Por qué “El Sempp”?</h4>
-
-<p>
-  Este nombre nace por el apodo de una persona querida que a veces me llama <b>Semp</b> o <b>Sempis</b>. Siempre charlamos sobre distintos temas y le gusta cómo explico cuestiones de IT o áreas similares cuando no las conoce. Es una forma cariñosa, es <b>Senpai</b> pero mas cariñoso.
-</p>
-
-<p>
-  Me quedaré con ese nombre y lo usaré. Espero en un futuro poder dedicarle más tiempo. De momento, te comparto el link al blog:<br />
-  <a href="https://elsempp.blogspot.com/" target="_blank">Ver blog</a>
-</p>
-
-<p>
-  Te recomiendo empezar por el primer post:
-  <a href="https://elsempp.blogspot.com/2025/04/quiero-iniciar-en-la-programacion-por.html" target="_blank">
-    Quiero iniciar en la programación
-  </a>,
-  ya que suele ser la pregunta más frecuente.
-</p>
-
-<h4>Un detalle</h4>
-
-<p>
-  Sí, lo admito: uso IA para “sanitizar” un poco mis errores de ortografía 😅.  
-  Si algo de lo que comparto te sirve, misión cumplida.
-</p>
-
-<p><b>¡Nos vemos!</b></p>]]></content><author><name></name></author><category term="techie" /><summary type="html"><![CDATA[El Sempp es otro blog donde manejo un enfoque de “tutoriales”, ya que muchas veces me pidieron consejos o me dijeron que explico bien algunos temas. Pensé entonces en crear algo que pueda aportar y ser útil.]]></summary></entry></feed>
+<p><b>Nos vemos!</b></p>]]></content><author><name></name></author><category term="inicio" /><summary type="html"><![CDATA[Si, esto es otro blog. Pero este es distinto, es personalizado, desde 0 e informal. Con un archivo que puedo guardar en mi PC. No usa base de datos ni tiene comentarios en tiempo real. No tiene ningun servicio! ¿Por qué? Se que re inventar la rueda no es lo mejor, pero quiero tener un espacio desligado de redes sociales o proyectos especificos. Este blog es ese espacio, donde un dia puedo subir algo de programacion, otro dia de videojuegos, un fin de semana algun tutorial, alguna curiosidad o pensamientos u opiniones sobre alguna serie o pelicula. En fin, un espacio personal.]]></summary></entry></feed>

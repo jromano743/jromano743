@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>
+    
+      Lobby Lab · WPP-Visualization: Chats de WhatsApp en data pura
+    
+  </title>
+
+  <!-- Open Graph -->
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Lobby Lab">
+
+<meta property="og:title"
+      content="WPP-Visualization: Chats de WhatsApp en data pura">
+
+<meta property="og:url"
+      content="https://jromano743.github.io/jromano743/techie/2026/01/26/wrapp-whatsapp/">
+
+<meta property="og:description"
+      content="
+                Siempre he pensado que nuestros chats dicen mucho más de nosotros de lo que creemos. No solo por el contenido, sino por los patrones: quién escribe más, a qu...
+              ">
+
+<meta property="og:image"
+      content="https://jromano743.github.io/jromano743/assets/images/default_cover.webp">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="twitter:title"
+      content="WPP-Visualization: Chats de WhatsApp en data pura">
+
+<meta name="twitter:description"
+      content="
+                Siempre he pensado que nuestros chats dicen mucho más de nosotros de lo que creemos. No solo por el contenido, sino por los patrones: quién escribe más, a qu...
+              ">
+
+<meta name="twitter:image"
+      content="https://jromano743.github.io/jromano743/assets/images/default_cover.webp">
+
+
+  <link rel="stylesheet" href="/jromano743/assets/style.css">
+</head>
+
+<body>
+  <div class="page">
+
+    <header class="header">
+      <h1 class="site-title">Lobby Lab</h1>
+      <nav class="nav">
+        <a href="/jromano743/">Inicio</a>
+        <a href="/jromano743/techie/">Techie</a>
+        <a href="/jromano743/geek/">Geek</a>
+        <a href="/jromano743/about/">About</a>
+      </nav>
+    </header>
+
+    <main class="main">
+      <article class="post">
+
+  <header class="post-header">
+    <h2>
+      <span class="post-category">
+        Techie
+      </span>
+      >> WPP-Visualization: Chats de WhatsApp en data pura
+    </h2>
+    <small class="post-date">
+      2026-01-26
+    </small>
+  </header>
+
+  <section class="post-content">
+    <p>Siempre he pensado que nuestros chats dicen mucho más de nosotros de lo que creemos. No solo por el contenido, sino por los patrones: quién escribe más, a qué hora se mueren los grupos o cuál es ese emoji que ya perdió todo su sentido de tanto usarlo. Así que, siguiendo mi costumbre de armar herramientas para entender lo que pasa por mis manos, creé <strong>WPP-Visualization</strong>.</p>
+
+<p>Es un proyecto que funciona como un “analizador de laboratorio” para los archivos de exportación de WhatsApp, permitiendo generar un reporte visual de lo que realmente sucede en una conversación.</p>
+
+<h3 id="por-qué-analizar-whatsapp">¿Por qué analizar WhatsApp?</h3>
+<p>La curiosidad fue el motor principal. WhatsApp te permite exportar el historial en un <code class="language-plaintext highlighter-rouge">.txt</code> que, a simple vista, es una pared de texto inmanejable. Quería una forma rápida de procesar eso y obtener métricas reales sin tener que subir mis datos a páginas de terceros que no sé qué hacen con la información.</p>
+
+<p>Con este script, el procesamiento es local y los resultados son directos. Es, básicamente, crearte tu propio “WhatsApp Wrapped” cuando quieras.</p>
+
+<h3 id="el-desafío-de-la-data-sucia">El desafío de la “data sucia”</h3>
+<p>Para los que venimos del lado del código, sabemos que el mundo real no viene en un JSON ordenado. El mayor reto aquí fue la <strong>sanitización de los datos</strong>.</p>
+
+<p>El archivo de WhatsApp es traicionero: cambia según el idioma del teléfono, el sistema operativo y el formato de fecha. El script tiene que ser capaz de identificar qué es un mensaje real y qué es “ruido” del sistema (como cuando alguien cambia la descripción del grupo o sale de la llamada). Lograr que el parser sea lo suficientemente robusto para no romperse con un emoji mal puesto fue la parte más entretenida.</p>
+
+<h3 id="qué-hay-bajo-el-capó">¿Qué hay bajo el capó?</h3>
+<p>El proyecto está construido principalmente con <strong>Python</strong>, aprovechando la potencia de <code class="language-plaintext highlighter-rouge">pandas</code> para el manejo de estructuras de datos y <code class="language-plaintext highlighter-rouge">matplotlib/seaborn</code> para la parte visual. Aquí algunas de las métricas que saca:</p>
+
+<ul>
+  <li><strong>Activity Heatmap:</strong> ¿El grupo está vivo a las 3 AM o es estrictamente de horario laboral?</li>
+  <li><strong>User Contributions:</strong> El ranking definitivo de quién manda más mensajes y quién solo aparece para leer.</li>
+  <li><strong>Emoji Counter:</strong> Un análisis de los emojis más frecuentes para entender el “mood” general del chat.</li>
+  <li><strong>Media Tracking:</strong> Identifica cuántos mensajes fueron fotos, videos o audios (aunque WhatsApp los marque como “omitidos” en el texto).</li>
+</ul>
+
+<div class="gallery">
+
+  <div class="img-frame">
+    <img src="/jromano743/assets/images/wppvisualization/emojis.webp" alt="Tabla de Emojis" />
+      <span>FIG 01 · Tabla de emojis</span>
+  </div>
+
+  <div class="img-frame">
+    <img src="/jromano743/assets/images/wppvisualization/messages.webp" alt="Tabla de mensajes" />
+      <span>FIG 02 · Tabla de mensajes</span>
+  </div>
+
+</div>
+
+<h3 id="estructura-y-modularidad">Estructura y Modularidad</h3>
+<p>Al igual que con mis otros proyectos, traté de mantener el código organizado. El procesamiento se divide en etapas claras: limpieza, transformación y finalmente la visualización. Esto me permite, en el futuro, agregar nuevos módulos de análisis (como análisis de sentimiento) sin tener que reescribir la base del parser.</p>
+
+<h3 id="estado-del-proyecto-funcional-y-abierto">Estado del proyecto: Funcional y abierto</h3>
+<p>A diferencia de otros prototipos, <strong>WPP-Visualization</strong> ya es funcional y lo pueden encontrar en mi GitHub. Todavía hay detalles que pulir, especialmente en el soporte para diferentes formatos de exportación regionales, pero la base ya está lista para que cualquiera pueda tirar su <code class="language-plaintext highlighter-rouge">.txt</code> y ver qué sale.</p>
+
+<h3 id="conclusión">Conclusión</h3>
+<p>Proyectos como este me recuerdan por qué me gusta programar: transformar un archivo de texto aburrido en información visual y comprensible es casi como hacer magia. Si te da curiosidad saber qué tan intenso es tu grupo de amigos o cuántos stickers mandas por día, dale una mirada al repo.</p>
+
+<p>¡Nos vemos en el próximo commit!</p>
+
+<p><a href="https://github.com/jromano743/wpp-visualization" target="_blank">Repo en GitHub: wpp-visualization</a></p>
+
+  </section>
+
+  
+  
+  
+
+  <!-- =========================
+       COMENTARIOS PUBLICADOS
+  ========================== -->
+  <section class="comments">
+    <h3>Comentarios</h3>
+
+    
+      <p class="no-comments">Todavía no hay comentarios.</p>
+    
+  </section>
+
+  <!-- =========================
+     FORMULARIO DE COMENTARIOS
+========================== -->
+<section class="comment-form">
+  <h3 class="comment-form__title">Dejar un comentario</h3>
+
+  <form
+    class="comment-form__form"
+    action="https://formsubmit.co/comentarios.jmb@gmail.com"
+    method="POST"
+  >
+
+    <!-- Configuración FormSubmit -->
+    <input type="hidden" name="_subject" value="Nuevo comentario en WPP-Visualization: Chats de WhatsApp en data pura">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_next" value="https://jromano743.github.io/jromano743//techie/2026/01/26/wrapp-whatsapp/#comentarios">
+
+    <!-- Contexto del post -->
+    <input type="hidden" name="post" value="WPP-Visualization: Chats de WhatsApp en data pura">
+    <input type="hidden" name="url" value="https://jromano743.github.io/jromano743//techie/2026/01/26/wrapp-whatsapp/">
+
+    <label class="comment-form__field">
+      <span class="comment-form__label">Nombre o Nickname</span>
+      <input
+        class="comment-form__input"
+        type="text"
+        name="user"
+        required
+      >
+    </label>
+
+    <label class="comment-form__field">
+      <span class="comment-form__label">Email (opcional)</span>
+      <input
+        class="comment-form__input"
+        type="email"
+        name="email"
+      >
+    </label>
+
+    <label class="comment-form__field">
+      <span class="comment-form__label">Comentario</span>
+      <textarea
+        class="comment-form__textarea"
+        name="text"
+        rows="4"
+        required
+      ></textarea>
+    </label>
+
+    <button class="comment-form__submit" type="submit">
+      Enviar comentario
+    </button>
+  </form>
+
+  <small class="comment-form__note">
+    Los comentarios no se publican automáticamente.<br>
+    Se revisan antes de aparecer en el sitio.
+  </small>
+</section>
+
+</article>
+
+    </main>
+
+    <footer class="footer">
+      © 2001–2026 sempp
+    </footer>
+
+  </div>
+</body>
+</html>
+
