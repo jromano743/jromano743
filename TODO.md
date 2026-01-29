@@ -6,7 +6,7 @@
 - [ ] Bot Beaters
 - [x] Bot Cipher
 - [ ] Linux vs Windows
-- [ ] Wrapp WPP
+- [x] Wrapp WPP
 - [ ] Perfiles: Logros
 - [ ] Panteon: La RS
 - [ ] My dotfiles

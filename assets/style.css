@@ -80,6 +80,10 @@ header h1 {
   animation: textFlicker 4s infinite;
 }
 
+header a {
+  text-decoration: none;
+}
+
 h2 {
   position: relative;
   width: fit-content;
