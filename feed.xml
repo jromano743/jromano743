@@ -1,4 +1,398 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://0.0.0.0:4000/jromano743/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/jromano743/" rel="alternate" type="text/html" /><updated>2026-01-29T17:46:46-06:00</updated><id>http://0.0.0.0:4000/jromano743/feed.xml</id><title type="html">Lobby Lab</title><subtitle>Un sitio personal con estética del 2001</subtitle><entry><title type="html">El día que aprendí a hablar palomés</title><link href="http://0.0.0.0:4000/jromano743/inicio/2026/01/28/el-dia-que-aprendi-a-hablar-paloma/" rel="alternate" type="text/html" title="El día que aprendí a hablar palomés" /><published>2026-01-28T00:00:00-06:00</published><updated>2026-01-28T00:00:00-06:00</updated><id>http://0.0.0.0:4000/jromano743/inicio/2026/01/28/el-dia-que-aprendi-a-hablar-paloma</id><content type="html" xml:base="http://0.0.0.0:4000/jromano743/inicio/2026/01/28/el-dia-que-aprendi-a-hablar-paloma/"><![CDATA[<p>Hace mucho, mucho tiempo, en un lejano 2022, me encontraba pensando qué proyecto hacer para mi trabajo final de programación de la universidad. Necesitaba hacer un juego con el motor de Unity en menos de cuatro días.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://0.0.0.0:4000/jromano743/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/jromano743/" rel="alternate" type="text/html" /><updated>2026-02-28T17:16:04-06:00</updated><id>http://0.0.0.0:4000/jromano743/feed.xml</id><title type="html">Lobby Lab</title><subtitle>Un sitio personal con estética del 2001</subtitle><entry><title type="html">GPG: A encriptar archivos</title><link href="http://0.0.0.0:4000/jromano743/techie/2026/02/21/gpg-a-encriptar-archivos/" rel="alternate" type="text/html" title="GPG: A encriptar archivos" /><published>2026-02-21T00:00:00-06:00</published><updated>2026-02-21T00:00:00-06:00</updated><id>http://0.0.0.0:4000/jromano743/techie/2026/02/21/gpg-a-encriptar-archivos</id><content type="html" xml:base="http://0.0.0.0:4000/jromano743/techie/2026/02/21/gpg-a-encriptar-archivos/"><![CDATA[<p>Volví a jugar con GPG y me recordó algo importante: la mayoría de las personas usa criptografía todos los días… sin entenderla. Y de repente pensé que hoy, más que nunca, es importante conocer este tipo de prácticas ya que vivimos en un mundo enteramente digitalizado.</p>
+
+<p>El día de hoy vine con ganas de escribir una pequeña guía para que puedas conocer y utilizar GPG para cifrar y firmar archivos. La idea es tener un post con la información completa sobre cómo usar esta herramienta tanto en su versión de Linux con la CLI como en Windows utilizando Gpg4win con su GUI <strong>Kleopatra</strong>. El día de hoy, toca Linux.</p>
+
+<h4 id="índice">Índice</h4>
+<ol>
+  <li><a href="#qué-es-gpg">Qué es GPG</a></li>
+  <li><a href="#gpg-en-el-día-a-día">GPG en el día a día</a></li>
+  <li><a href="#cifrado-simétrico">Cifrado Simétrico</a>
+    <ul>
+      <li><a href="#cifrado-simétrico-ejemplo">Cifrado Simétrico - Linux</a></li>
+      <li><a href="#descifrado-simétrico-ejemplo">Descifrado Simétrico - Linux</a></li>
+    </ul>
+  </li>
+  <li><a href="#identidad-digital">Identidad digital</a>
+    <ul>
+      <li><a href="#llave-privada">Llave privada</a></li>
+      <li><a href="#llave-pública">Llave pública</a></li>
+    </ul>
+  </li>
+  <li><a href="#sign-firmar-archivos">Sign: Firmar archivos</a>
+    <ul>
+      <li><a href="#firma-adjunta-attached--binary-signature">Firma adjunta (Attached / Binary Signature)</a>
+        <ul>
+          <li><a href="#validar-la-firma-y-ver-el-contenido">Validar la firma y ver el contenido</a></li>
+        </ul>
+      </li>
+      <li><a href="#firma-separada-detached-signature">Firma separada (Detached Signature)</a>
+        <ul>
+          <li><a href="#validar-firma">Validar firma</a></li>
+        </ul>
+      </li>
+      <li><a href="#firma-clear-clearsign">Firma clear (Clearsign)</a>
+        <ul>
+          <li><a href="#validar-firma-1">Validar firma</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#generar-claves">Generar claves</a></li>
+  <li><a href="#clave-pública-y-clave-privada-cómo-se-usan">Clave pública y clave privada: cómo se usan</a>
+    <ul>
+      <li><a href="#clave-privada">Clave privada</a></li>
+      <li><a href="#clave-pública">Clave pública</a></li>
+    </ul>
+  </li>
+  <li><a href="#importar-claves">Importar claves</a></li>
+  <li><a href="#un-ejemplo-de-uso">Un ejemplo de uso</a>
+    <ul>
+      <li><a href="#cifrar-para-otra-persona-usando-su-clave-pública">Cifrar para otra persona (usando su clave pública)</a></li>
+      <li><a href="#firmar-con-nuestra-clave-privada">Firmar con nuestra clave privada</a></li>
+    </ul>
+  </li>
+  <li><a href="#advertencias">Advertencias</a>
+    <ul>
+      <li><a href="#errores-comunes">Errores comunes</a></li>
+      <li><a href="#verificación-de-identidad">Verificación de identidad</a></li>
+      <li><a href="#buenas-prácticas">Buenas Practicas</a></li>
+    </ul>
+  </li>
+  <li><a href="#resumen-conceptual">Resumen conceptual</a></li>
+</ol>
+
+<hr />
+
+<h2 id="qué-es-gpg">Qué es GPG</h2>
+<p>No podemos empezar sin saber de qué estamos hablando. <strong>GPG</strong> es la sigla de <strong>GNU Privacy Guard</strong>, una implementación libre del estándar <strong>OpenPGP</strong>. Es una herramienta de criptografía de clave pública para cifrar, descifrar y firmar información.</p>
+
+<p>Básicamente, con GPG puedes:</p>
+<ul>
+  <li>cifrar archivos</li>
+  <li>firmar archivos digitalmente (para garantizar integridad y autenticidad)</li>
+  <li>verificar firmas</li>
+  <li>gestionar claves públicas/privadas.</li>
+</ul>
+
+<p>O en español: proteger la confidencialidad e integridad de tus datos.</p>
+
+<hr />
+
+<h2 id="gpg-en-el-día-a-día">GPG en el día a día</h2>
+<p>GPG es la misma herramienta, pero puede utilizarse desde la línea de comandos (CLI) en Linux o mediante distribuciones como Gpg4win en Windows, que incluyen herramientas gráficas como Kleopatra. En esta guía tocaremos paso por paso algunas de las características más interesantes en la versión de Linux (próximamente Windows con Kleopatra).</p>
+
+<hr />
+
+<h2 id="cifrado-simétrico">Cifrado Simétrico</h2>
+<p>El cifrado simétrico consiste en un proceso al que conceptualmente estamos acostumbrados: usar una única clave para acceder a un recurso. Solo que en lugar de un sitio web, esta vez es para un archivo. Con el cifrado simétrico podemos cifrar el archivo con una clave para que su contenido no sea visible excepto por quienes poseen dicha clave.</p>
+
+<p>En el caso de GPG, la passphrase que ingresamos no se usa directamente como clave, sino que se deriva internamente una clave criptográfica real a partir de ella.</p>
+
+<h3 id="cifrado-simétrico-ejemplo">Cifrado Simétrico ejemplo</h3>
+<p>Para aplicar un cifrado simétrico en Linux debemos ubicarnos con la terminal en la misma carpeta donde se encuentra el archivo que queremos cifrar y ejecutar el siguiente comando:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gpg <span class="nt">-c</span> file1.txt
+</code></pre></div></div>
+<p>O también su versión extensa:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gpg <span class="nt">--symmetric</span> file1.txt
+</code></pre></div></div>
+
+<p>Esto nos solicitará un passphrase que será nuestra contraseña para descifrar el archivo y nos generará un archivo <strong>file1.txt.gpg</strong>. El <strong>.gpg</strong> es nuestro archivo cifrado. Este nuevo archivo es el archivo cifrado. Podemos compartirlo o mantenerlo y eliminar el original según nuestra necesidad. Es muy importante que <strong>NO PIERDAS LA CLAVE</strong>.</p>
+
+<h3 id="descifrado-simétrico-ejemplo">Descifrado Simétrico ejemplo</h3>
+<p>Ya tenemos nuestro archivo <strong>file1.txt.gpg</strong>. Lo siguiente es descifrarlo para conocer su contenido. Tenemos nuevamente 2 opciones, el comando abreviado o el comando extenso.</p>
+
+<p>Empecemos con el abreviado:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gpg <span class="nt">-d</span> file1.txt.gpg <span class="o">&gt;</span> file1.txt
+</code></pre></div></div>
+<p>Este comando usa la flag <strong>-d</strong> (desencriptar/descifrar) y la aplica sobre el archivo <strong>.gpg</strong> que le pasemos. Una vez descifrado redirige la salida (el conjunto de bits que forman el archivo) a un nuevo archivo. Para redirigirlo utilizamos el operador <strong>&gt;</strong> y le indicamos hacia qué archivo dirigir dicha salida; si el archivo no existe, lo creará.</p>
+
+<p>Si no estás acostumbrado a la redirección puedes utilizar la flag <strong>-o</strong> (output) para indicarle en qué archivo se guardarán los bits:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gpg <span class="nt">-d</span> file1.txt.gpg <span class="nt">-o</span> file1.txt
+</code></pre></div></div>
+<p>O en su versión extensa:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gpg <span class="nt">--decrypt</span> file1.txt.gpg <span class="nt">--output</span> file1.txt
+</code></pre></div></div>
+
+<p>Te regalo un archivo cifrado… SI te gana la curiosidad. La clave es <strong>loblab_gpg_linux</strong><br />
+<a href="/jromano743/assets/files/gpgaencriptararchivos/ArchivoCifrado.txt.gpg" download="ArchivoCifrado.txt.gpg">Descargar archivo .gpg</a></p>
+
+<hr />
+
+<h2 id="identidad-digital">Identidad digital</h2>
+<p>Hasta ahora solo utilizamos una clave simétrica. Lo cual nos sirve para proteger un archivo, pero nada garantiza quién lo creó. Para poder asociar acciones criptográficas a una identidad, GPG nos provee un par de llaves criptográficas: una clave privada y una pública.</p>
+
+<p>Este par nos permite:</p>
+<ul>
+  <li>Cifrar para que solo el dueño de la clave privada pueda descifrar.</li>
+  <li>Firmar para demostrar que algo fue generado con una clave privada específica.</li>
+</ul>
+
+<p>En GPG cada llave tiene capacidades:</p>
+<ul>
+  <li>S → Sign (firmar)</li>
+  <li>E → Encrypt (cifrar)</li>
+  <li>C → Certify (firmar otras claves)</li>
+  <li>A → Authenticate (SSH, etc.)</li>
+</ul>
+
+<h3 id="llave-privada">Llave privada</h3>
+<p>La llave privada es tu llave personal. Esta es la que no se comparte y se utiliza para descifrar los archivos cifrados con tu clave pública y para generar firmas digitales.</p>
+
+<h3 id="llave-pública">Llave pública</h3>
+<p>Pensemos en la llave pública como un candado. Imagina que tienes infinitas copias del candado que corresponde a tu llave disponibles y los puedes repartir por ahí. Si me das un candado yo puedo cifrar archivos con tu candado, pero solo tú puedes abrirlos utilizando tu llave privada.</p>
+
+<p>De la misma manera, si firmas algo con tu llave privada, cualquiera que tenga tu llave pública puede verificar que esa firma fue generada con esa clave. La identidad real dependerá de que el receptor confíe en que esa clave pública realmente te pertenece.</p>
+
+<hr />
+
+<h2 id="sign-firmar-archivos">Sign: Firmar archivos</h2>
+<p>Cuando se quiere asegurar la integridad de un archivo, es decir, validar que no fue modificado y que fue firmado con una clave privada específica, se debe comprobar la firma del mismo. Existen 3 tipos de firmas, las cuales veremos a continuación:</p>
+
+<h3 id="firma-adjunta-attached--binary-signature">Firma adjunta (Attached / Binary Signature)</h3>
+<p>Esta firma:</p>
+<ol>
+  <li>Calcula el hash del archivo.</li>
+  <li>Genera la firma con tu clave privada.</li>
+  <li>Empaqueta el archivo y la firma en un solo archivo <strong>.gpg</strong>.</li>
+</ol>
+
+<p>Se podría decir que guardamos nuestro archivo en un sobre y le ponemos nuestro sello. El resultado es un archivo binario <strong>.gpg</strong> que contiene tanto el contenido como la firma.</p>
+
+<p>Firma:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gpg <span class="nt">-s</span> file2.txt
+</code></pre></div></div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gpg <span class="nt">--sign</span> file2.txt
+</code></pre></div></div>
+
+<h4 id="validar-la-firma-y-ver-el-contenido">Validar la firma y ver el contenido</h4>
+<p>Con el binario firmado podemos hacer 2 cosas. Validar su firma:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gpg <span class="nt">--verify</span> archivo.txt.gpg
+</code></pre></div></div>
+<p>Y ver el contenido del archivo:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gpg <span class="nt">--decrypt</span> archivo.txt.gpg
+</code></pre></div></div>
+<p>En el caso de necesitarlo podemos redirigir el contenido similar al cifrado simétrico:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gpg <span class="nt">--decrypt</span> archivo.txt.gpg <span class="o">&gt;</span> archivo.txt
+</code></pre></div></div>
+
+<h3 id="firma-separada-detached-signature">Firma separada (Detached Signature)</h3>
+<p>Esta firma:</p>
+<ol>
+  <li>Calcula el hash del archivo.</li>
+  <li>Firma el hash.</li>
+  <li>Guarda SOLO la firma en <strong>.sig</strong>.</li>
+</ol>
+
+<p>El archivo original no se modifica, sino que se genera un nuevo archivo <strong>.sig</strong> con la firma del hash del archivo. Este archivo contiene la firma criptográfica asociada a la clave del firmante (identificada por su KeyID o fingerprint).</p>
+
+<h4 id="validar-firma">Validar firma</h4>
+<p>En este caso, al tratarse de un par de archivos, se lee el archivo, se calcula el hash y se comprueba con la firma para validar la integridad del mismo:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gpg <span class="nt">--verify</span> archivo.txt.sig archivo.txt
+</code></pre></div></div>
+
+<h3 id="firma-clear-clearsign">Firma clear (Clearsign)</h3>
+<p>Esta firma:</p>
+<ol>
+  <li>Firma el texto.</li>
+  <li>Mantiene el contenido legible.</li>
+  <li>Añade la firma en formato ASCII armor.</li>
+</ol>
+
+<p>Al final del archivo se coloca la firma:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gpg <span class="nt">--clearsign</span> archivo.txt
+</code></pre></div></div>
+
+<h4 id="validar-firma-1">Validar firma</h4>
+<p>La firma se incluye en el archivo, por lo que solo hay que ejecutar:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gpg <span class="nt">--verify</span> archivo.txt.asc
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="generar-claves">Generar claves</h2>
+
+<p>Hasta ahora trabajamos con cifrado simétrico y firmas, pero para poder firmar archivos o cifrar usando clave pública necesitamos primero crear nuestra identidad criptográfica.</p>
+
+<p>Para eso utilizamos el comando:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gpg <span class="nt">--full-generate-key</span>
+</code></pre></div></div>
+
+<p>Este comando nos permite crear un par de claves: una <strong>clave privada</strong> y una <strong>clave pública</strong>.</p>
+
+<p>Cuando ejecutamos:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gpg <span class="nt">--full-generate-key</span>
+</code></pre></div></div>
+
+<p>GPG nos pedirá:</p>
+
+<ol>
+  <li>Tipo de algoritmo (RSA, ECC, etc.).</li>
+  <li>Tamaño de clave (si aplica).</li>
+  <li>Fecha de expiración.</li>
+  <li>Nombre.</li>
+  <li>Email (El email no tiene que existir realmente, pero es el identificador que otros verán asociado a tu clave.).</li>
+  <li>Comentario (opcional).</li>
+  <li>Passphrase para proteger la clave privada.</li>
+</ol>
+
+<p>Al finalizar, se crea:</p>
+
+<ul>
+  <li>Una <strong>clave privada</strong> (secreta, la llave).</li>
+  <li>Una <strong>clave pública</strong> (compartible, un candado).</li>
+</ul>
+
+<p>Podemos ver nuestras claves con:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gpg <span class="nt">--list-keys</span>
+</code></pre></div></div>
+
+<p>Y nuestras claves privadas con:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gpg <span class="nt">--list-secret-keys</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="clave-pública-y-clave-privada-cómo-se-usan">Clave pública y clave privada: cómo se usan</h2>
+
+<h3 id="clave-privada">Clave privada</h3>
+
+<p>La clave privada:</p>
+
+<ul>
+  <li>Se guarda en tu sistema.</li>
+  <li>Está protegida por passphrase (una contraseña).</li>
+  <li>Se usa para:
+    <ul>
+      <li>Firmar archivos.</li>
+      <li>Descifrar archivos cifrados con tu clave pública.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Nunca debe compartirse.</p>
+
+<p>Conceptualmente:</p>
+<blockquote>
+  <p>Es tu identidad digital real. Si alguien la obtiene, puede hacerse pasar por vos.</p>
+</blockquote>
+
+<h3 id="clave-pública">Clave pública</h3>
+
+<p>La clave pública:</p>
+
+<ul>
+  <li>Se puede compartir libremente.</li>
+  <li>Se usa para:
+    <ul>
+      <li>Cifrar archivos destinados a vos.</li>
+      <li>Verificar firmas que generaste.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Podemos exportarla para compartirla:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gpg <span class="nt">--export</span> <span class="nt">--armor</span> tu@email.com <span class="o">&gt;</span> clave_publica.asc
+</code></pre></div></div>
+
+<p>El flag <code class="language-plaintext highlighter-rouge">--armor</code> la convierte en formato ASCII legible.</p>
+
+<hr />
+
+<h2 id="importar-claves">Importar claves</h2>
+
+<p>Cuando recibimos una clave pública de otra persona y queremos cifrar archivos para ella o verificar sus firmas, primero debemos importarla a nuestro keyring (almacén local de claves).</p>
+
+<p>Para hacerlo utilizamos el comando:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gpg <span class="nt">--import</span> clave_de_mi_amigo.asc
+</code></pre></div></div>
+
+<p>También es posible que la clave venga en formato binario (.gpg). En ese caso, el comando es exactamente el mismo:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gpg <span class="nt">--import</span> clave_de_mi_amigo.gpg
+</code></pre></div></div>
+
+<p>GPG detecta automáticamente el formato del archivo y lo procesa correctamente.</p>
+
+<p>Una vez importada, podemos verificar que la clave esté en nuestro sistema ejecutando:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gpg <span class="nt">--list-keys</span>
+</code></pre></div></div>
+<p>Importar claves privadas</p>
+
+<p>El mismo principio aplica para las claves privadas, por ejemplo cuando necesitamos migrar nuestra identidad criptográfica a un nuevo dispositivo:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gpg <span class="nt">--import</span> mi_clave_privada.asc
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="un-ejemplo-de-uso">Un ejemplo de uso</h2>
+
+<h3 id="cifrar-para-otra-persona-usando-su-clave-pública">Cifrar para otra persona (usando su clave pública)</h3>
+
+<p>Si tenemos la clave pública de alguien importada en nuestro sistema:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gpg <span class="nt">--encrypt</span> <span class="nt">--recipient</span> persona@email.com archivo.txt
+</code></pre></div></div>
+
+<p>Solo esa persona podrá descifrarlo con su clave privada.</p>
+
+<h3 id="firmar-con-nuestra-clave-privada">Firmar con nuestra clave privada</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gpg <span class="nt">--sign</span> archivo.txt
+</code></pre></div></div>
+
+<p>Cualquiera con nuestra clave pública podrá verificar la firma:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gpg <span class="nt">--verify</span> archivo.txt.gpg
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="advertencias">Advertencias</h2>
+<h3 id="errores-comunes">Errores comunes</h3>
+<p>Errores comunes y puntos críticos a tener en cuenta al trabajar con GPG:</p>
+<ul>
+  <li>La clave privada representa tu identidad digital.</li>
+  <li>Si alguien obtiene tu clave privada, puede firmar o descifrar archivos en tu nombre.</li>
+  <li>Nunca debe compartirse.</li>
+  <li>Siempre debe almacenarse protegida por una passphrase robusta.</li>
+  <li>Es recomendable mantener un backup cifrado del keyring o de la clave privada exportada.</li>
+</ul>
+
+<h3 id="verificación-de-identidad">Verificación de identidad</h3>
+<p>Nunca confíes automáticamente en una clave pública importada.
+Siempre verifica su fingerprint por un canal seguro antes de usarla.</p>
+
+<p>Puedes ver el fingerprint con:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gpg <span class="nt">--fingerprint</span> email@ejemplo.com
+</code></pre></div></div>
+
+<h3 id="buenas-prácticas">Buenas prácticas</h3>
+<ul>
+  <li>Define una fecha de expiración para tus claves.</li>
+  <li>Evita usar tamaños de clave débiles.</li>
+  <li>Nunca subas tu clave privada a repositorios públicos.</li>
+  <li>Si pierdes tu clave privada, pierdes el acceso a todo lo cifrado con tu clave pública.</li>
+</ul>
+
+<hr />
+
+<h2 id="resumen-conceptual">Resumen conceptual</h2>
+
+<p>Con <code class="language-plaintext highlighter-rouge">--full-generate-key</code> creamos una identidad digital compuesta por:</p>
+
+<ul>
+  <li>Clave privada → para firmar y descifrar.</li>
+  <li>Clave pública → para compartir y permitir que otros cifren o verifiquen.</li>
+</ul>
+
+<p>Cifrar protege el contenido.<br />
+Firmar protege la integridad y permite asociar el archivo a una clave específica.</p>
+
+<p>A partir de aquí, ya no dependemos solo de una passphrase como en el cifrado simétrico, sino que entramos en el modelo de criptografía asimétrica.</p>]]></content><author><name></name></author><category term="techie" /><summary type="html"><![CDATA[Volví a jugar con GPG y me recordó algo importante: la mayoría de las personas usa criptografía todos los días… sin entenderla. Y de repente pensé que hoy, más que nunca, es importante conocer este tipo de prácticas ya que vivimos en un mundo enteramente digitalizado.]]></summary></entry><entry><title type="html">El día que aprendí a hablar palomés</title><link href="http://0.0.0.0:4000/jromano743/inicio/2026/01/28/el-dia-que-aprendi-a-hablar-paloma/" rel="alternate" type="text/html" title="El día que aprendí a hablar palomés" /><published>2026-01-28T00:00:00-06:00</published><updated>2026-01-28T00:00:00-06:00</updated><id>http://0.0.0.0:4000/jromano743/inicio/2026/01/28/el-dia-que-aprendi-a-hablar-paloma</id><content type="html" xml:base="http://0.0.0.0:4000/jromano743/inicio/2026/01/28/el-dia-que-aprendi-a-hablar-paloma/"><![CDATA[<p>Hace mucho, mucho tiempo, en un lejano 2022, me encontraba pensando qué proyecto hacer para mi trabajo final de programación de la universidad. Necesitaba hacer un juego con el motor de Unity en menos de cuatro días.</p>
 
 <p>Traté y traté de pensar algo que pudiera hacer rápido, ya que además de esa materia tenía la semana muy ocupada. El juego debía estar listo y enviado para el viernes.</p>
 
@@ -1071,34 +1465,4 @@ Tengo fe en que los juegos de pelea, a pesar de ser algo más de nicho, siempre 
 
 <p>Eso es todo para comentar.</p>
 
-<p><b>¡Nos vemos!</b></p>]]></content><author><name></name></author><category term="geek" /><summary type="html"><![CDATA[Los juegos de pelea son un género que, a día de hoy, considero de nicho. No es un género frecuente y, cuando lo es, suele estar muy simplificado. Un ejemplo de esto son los juegos de “pelea” para celulares, donde parecen más un juego de pelea por turnos que un juego realmente de pelea, donde tenés que prestar atención, improvisar y, cuando lográs conectar un golpe, pasar de la improvisación a la secuencia de un combo. Creo que va quedando de lado.]]></summary></entry><entry><title type="html">Repo PWA</title><link href="http://0.0.0.0:4000/jromano743/techie/2026/01/08/repo-pwa/" rel="alternate" type="text/html" title="Repo PWA" /><published>2026-01-08T00:00:00-06:00</published><updated>2026-01-08T00:00:00-06:00</updated><id>http://0.0.0.0:4000/jromano743/techie/2026/01/08/repo-pwa</id><content type="html" xml:base="http://0.0.0.0:4000/jromano743/techie/2026/01/08/repo-pwa/"><![CDATA[<p>Este es un repositorio/sitio web en donde publico algunas Progressive Web Apps con la opcion de instalacion sencilla en Andriod.</p>
-
-<p>Estas aplicaciones son mera curiosidad y pruebas. Con el tiempo iré agregando más.</p>
-
-<h4>¿Por qué PWAs?</h4>
-<p>Algunas veces quise compartir aplicaciones pero no quiero tener que publicarlas o elaborar <b>.apk</b>’s para pasar por un proceso de instalación. Quería algo simple y lo más simple que encontré es esto.</p>
-
-<p>Es verdad, existen algunas limitaciones, pero quiero hacer cositas funcionales, nada complejo o dependiente de servicios. Al menos no para proyectos que hago de chill.</p>
-
-<p>No doy más vueltas. Aquí puedes ver el índice de las apps</p>
-<blockquote>
-  <p><a href="https://jromano743.github.io/repo-pwa/" target="_blank">Ver web</a></p>
-</blockquote>
-
-<h4>Instalación</h4>
-<p>La instalación es simple, solo debes presionar el botón de <b>Instalar</b> o en su defecto ir a <b>Opciones → Añadir Aplicación</b>.</p>
-<div class="gallery">
-
-  <div class="img-frame">
-    <img src="/jromano743/assets/images/repopwa/instalar_metodo_1.webp" alt="Instalar con boton" />
-    <span>FIG 01 · Instalar con boton</span>
-  </div>
-
-  <div class="img-frame">
-    <img src="/jromano743/assets/images/repopwa/instalar_metodo_2.webp" alt="Instalar desde opciones" />
-    <span>FIG 02 · Instalar desde opciones</span>
-  </div>
-
-</div>
-
-<p><b>¡Nos vemos!</b></p>]]></content><author><name></name></author><category term="techie" /><summary type="html"><![CDATA[Este es un repositorio/sitio web en donde publico algunas Progressive Web Apps con la opcion de instalacion sencilla en Andriod.]]></summary></entry></feed>
+<p><b>¡Nos vemos!</b></p>]]></content><author><name></name></author><category term="geek" /><summary type="html"><![CDATA[Los juegos de pelea son un género que, a día de hoy, considero de nicho. No es un género frecuente y, cuando lo es, suele estar muy simplificado. Un ejemplo de esto son los juegos de “pelea” para celulares, donde parecen más un juego de pelea por turnos que un juego realmente de pelea, donde tenés que prestar atención, improvisar y, cuando lográs conectar un golpe, pasar de la improvisación a la secuencia de un combo. Creo que va quedando de lado.]]></summary></entry></feed>
